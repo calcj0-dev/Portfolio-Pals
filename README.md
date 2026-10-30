@@ -1,6 +1,6 @@
 # 投資キャラ診断（Portfolio Pals）
 
-資産構成を入れるだけ。質問ゼロ。BAKA-017。
+資産構成を入れるだけ。BAKA-017。
 
 設計書：`C:\Users\Sho\Development\design\BAKA-017_ポートフォリオ性格診断\`
 
