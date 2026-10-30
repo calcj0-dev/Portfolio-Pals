@@ -3,3 +3,6 @@ dist/
 .vercel/
 .env*.local
 *.log
+
+# キャラの元の画像（大きいので入れない。切り抜いたものは public/chars/ に入れる）
+art/raw/
