@@ -13,7 +13,7 @@
     { "input": { "us": 100 }, "expect": "dreamer" },
     { "input": { "world": 50, "cash": 50 }, "expect": "otter" },
     { "input": { "world": 30, "us": 30, "cash": 40 }, "expect": "mediator" },
-    { "input": { "jpStock": 50, "cash": 50 }, "expect": "yutai" },
+    { "input": { "jpStock": 50, "cash": 50 }, "expect": "mekiki" },
     { "input": { "usStock": 50, "cash": 50 }, "expect": "tech" },
     { "input": { "otStock": 60, "cash": 40 }, "expect": "sheep" },
     { "input": { "world": 40, "jpStock": 20, "usStock": 15, "cash": 25 }, "expect": "oshi" },

@@ -7,7 +7,7 @@
     { "id": "octopus", "all": [["count5", "gte", 7]] },
     { "id": "squirrel", "all": [["cash", "gte", 90]] },
     { "id": "rocket_cat", "all": [["crypto", "gte", 40]] },
-    { "id": "yutai", "all": [["jpStock", "gte", 40]] },
+    { "id": "mekiki", "all": [["jpStock", "gte", 40]] },
     { "id": "tech", "all": [["usStock", "gte", 40]] },
     { "id": "oshi", "all": [["jpStock", "gte", 10], ["foreignStocks", "gte", 10], ["stocks", "gte", 30]] },
     { "id": "explorer", "all": [["otherReg", "gte", 30]] },

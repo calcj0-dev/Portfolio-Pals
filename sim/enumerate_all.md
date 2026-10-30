@@ -10,7 +10,7 @@
 | 全部ちょっとずつのタコ | 70,310,361 | 83.04% | usStock5 otStock5 bond5 gold5 crypto5 misc5 cash70 |
 | タンス番のリス | 78 | 0.00% | cash100 |
 | 月を目指すロケット猫 | 569,316 | 0.67% | crypto40 cash60 |
-| 優待ハンター | 567,951 | 0.67% | jpStock40 cash60 |
+| 日本株の目利き | 567,951 | 0.67% | jpStock40 cash60 |
 | 夜ふかしのテック信者 | 566,586 | 0.67% | usStock40 cash60 |
 | 推し株オタク | 2,013,359 | 2.38% | jpStock10 otStock20 cash70 |
 | 新興国ロマンの冒険家 | 1,174,934 | 1.39% | otherReg30 cash70 |

@@ -41,7 +41,7 @@
       "id": "samurai",
       "zukanGroup": "fund",
       "zukanOrder": 5,
-      "good": "yutai",
+      "good": "mekiki",
       "bad": "tech",
       "image": "chars/samurai.svg",
       "og": "og/samurai.png"
@@ -65,13 +65,13 @@
       "og": "og/craftsman.png"
     },
     {
-      "id": "yutai",
+      "id": "mekiki",
       "zukanGroup": "stock",
       "zukanOrder": 8,
       "good": "samurai",
       "bad": "dreamer",
-      "image": "chars/yutai.svg",
-      "og": "og/yutai.png"
+      "image": "chars/mekiki.svg",
+      "og": "og/mekiki.png"
     },
     {
       "id": "tech",
@@ -86,7 +86,7 @@
       "id": "oshi",
       "zukanGroup": "stock",
       "zukanOrder": 10,
-      "good": "yutai",
+      "good": "mekiki",
       "bad": "monk",
       "image": "chars/oshi.svg",
       "og": "og/oshi.png"
