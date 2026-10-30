@@ -3,7 +3,39 @@
 
 import type { LocaleCheck } from '../core/validate';
 
-export const MESSAGE_KEYS = ['common.disclaimer', 'title.main', 'title.sub', 'title.preparing', 'share.post'] as const;
+export const MESSAGE_KEYS = [
+  'common.disclaimer',
+  'common.back',
+  'common.close',
+  'common.soundOn',
+  'common.soundOff',
+  'common.percent',
+
+  'title.main',
+  'title.sub',
+  'title.preparing',
+  'title.start',
+  'title.safe',
+  'title.credit',
+
+  'input.help',
+  'input.step1',
+  'input.presets',
+  'input.step2',
+  'input.remainder',
+  'input.note',
+  'input.reset',
+  'input.diagnose',
+
+  'pie.label',
+
+  'help.heading',
+  'help.item',
+  'help.to',
+  'help.note',
+
+  'share.post',
+] as const;
 
 export type MessageKey = (typeof MESSAGE_KEYS)[number];
 

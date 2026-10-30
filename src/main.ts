@@ -1,22 +1,37 @@
 import './style.css';
 import { initAnalytics } from './analytics';
-import { setLocale, t } from './i18n';
-import { h } from './ui/dom';
-import { APP_VERSION, formatVersion } from './version';
+import { setLocale } from './i18n';
+import { createApp, type ScreenName } from './ui/app';
+import { modals } from './ui/modals';
+import { disclaimer } from './ui/parts';
+import { inputScreen } from './ui/screens/input';
+import { preparingScreen } from './ui/screens/preparing';
+import { titleScreen } from './ui/screens/title';
 
 setLocale('ja');
 initAnalytics();
 
-// #1 の仮の画面。画面の切り替えは #4 以降で作る
 const root = document.querySelector<HTMLElement>('#app');
 if (root) {
-  root.replaceChildren(
-    h('main', { className: 'screen' }, [
-      h('div', { className: 'top-bar' }, [h('span', { className: 'version', text: formatVersion(APP_VERSION) })]),
-      h('h1', { className: 'title-main', text: t('title.main') }),
-      h('p', { className: 'title-sub', text: t('title.sub') }),
-      h('p', { className: 'title-sub', text: t('title.preparing') }),
-    ]),
-    h('footer', { className: 'disclaimer', text: t('common.disclaimer') }),
+  const app = createApp(
+    root,
+    {
+      title: titleScreen,
+      input: inputScreen,
+      diagnosing: preparingScreen,
+      result: preparingScreen,
+      zukan: preparingScreen,
+      detail: preparingScreen,
+      shared: preparingScreen,
+    },
+    modals,
+    disclaimer(),
   );
+  app.go('title');
+
+  // 開発用：?screen=input のように画面を直接開く（公開版では無視する）
+  if (import.meta.env.DEV) {
+    const screen = new URLSearchParams(location.search).get('screen') as ScreenName | null;
+    if (screen) app.go(screen);
+  }
 }
