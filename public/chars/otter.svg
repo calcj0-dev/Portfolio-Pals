@@ -1,51 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
   <g stroke="#5B4A4A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
     <!-- 耳（小さく横の低い位置） -->
-    <circle cx="64" cy="94" r="9" fill="#93735D"/>
-    <circle cx="176" cy="94" r="9" fill="#93735D"/>
+    <circle cx="56" cy="102" r="8.5" fill="#93735D"/>
+    <circle cx="184" cy="102" r="8.5" fill="#93735D"/>
     <!-- 体（岩の後ろ） -->
-    <path d="M76 190 C72 160 92 144 120 144 C148 144 168 160 164 190 Z" fill="#B08F75"/>
-    <!-- 頭（横に広く平たい） -->
-    <path d="M58 110 C56 80 85 62 120 62 C155 62 184 80 182 110 C181 138 156 154 120 154 C84 154 59 138 58 110 Z" fill="#B08F75"/>
-    <!-- 口元の明るいところ -->
-    <path d="M92 126 C92 113 104 108 120 108 C136 108 148 113 148 126 C148 140 136 148 120 148 C104 148 92 140 92 126 Z" fill="#F3E4D4"/>
+    <path d="M80 192 C76 164 95 150 120 150 C145 150 164 164 160 192 Z" fill="#B08F75"/>
+    <!-- 頭（大きく、横に広く平たい） -->
+    <path d="M47 116 C45 82 80 61 121 62 C161 62 196 82 193 116 C192 145 160 162 120 162 C79 163 48 145 47 116 Z" fill="#B08F75"/>
     <!-- 岩 -->
-    <path d="M20 222 C18 192 42 170 80 172 C102 160 146 158 176 172 C206 176 222 198 220 222 Z" fill="#D3CCC4"/>
+    <path d="M18 222 C16 194 40 174 78 176 C100 164 144 162 174 176 C204 180 224 200 222 222 Z" fill="#D3CCC4"/>
     <!-- 双眼鏡と手 -->
-    <path d="M92 152 C92 145 113 145 113 152 L113 178 C113 184 92 184 92 178 Z" fill="#8494AB"/>
-    <path d="M127 152 C127 145 148 145 148 152 L148 178 C148 184 127 184 127 178 Z" fill="#8494AB"/>
-    <path d="M113 160 L127 160" fill="none"/>
-    <ellipse cx="84" cy="172" rx="10" ry="9" fill="#93735D"/>
-    <ellipse cx="156" cy="172" rx="10" ry="9" fill="#93735D"/>
+    <path d="M94 160 C94 154 113 154 113 160 L113 183 C113 188 94 188 94 183 Z" fill="#8494AB" stroke-width="4"/>
+    <path d="M127 160 C127 154 146 154 146 160 L146 183 C146 188 127 188 127 183 Z" fill="#8494AB" stroke-width="4"/>
+    <path d="M113 167 L127 167" fill="none" stroke-width="4"/>
+    <ellipse cx="87" cy="178" rx="9" ry="8" fill="#93735D" stroke-width="4"/>
+    <ellipse cx="153" cy="178" rx="9" ry="8" fill="#93735D" stroke-width="4"/>
   </g>
   <!-- 岩の模様 -->
   <g fill="#E6E1DB" stroke="none">
-    <ellipse cx="56" cy="200" rx="12" ry="6"/>
-    <ellipse cx="178" cy="196" rx="9" ry="5"/>
-    <ellipse cx="128" cy="206" rx="7" ry="4"/>
+    <ellipse cx="54" cy="202" rx="12" ry="6"/>
+    <ellipse cx="182" cy="199" rx="9" ry="5"/>
+    <ellipse cx="128" cy="208" rx="7" ry="4"/>
   </g>
   <!-- 双眼鏡のレンズ -->
   <g fill="#C9D6E8" stroke="none">
-    <ellipse cx="102.5" cy="152" rx="6" ry="2.5"/>
-    <ellipse cx="137.5" cy="152" rx="6" ry="2.5"/>
+    <ellipse cx="103.5" cy="160" rx="5.5" ry="2.2"/>
+    <ellipse cx="136.5" cy="160" rx="5.5" ry="2.2"/>
   </g>
-  <!-- 顔（全キャラ共通の形。少し困った顔） -->
+  <!-- 口元の明るいところ -->
+  <ellipse cx="120" cy="135" rx="25" ry="16" fill="#F3E4D4"/>
+  <!-- 顔（全キャラ共通の形。パーツは顔の下のほうに寄せる。少し困った顔） -->
   <g stroke="none">
-    <ellipse cx="78" cy="122" rx="9" ry="6" fill="#FFB3BF" opacity="0.75"/>
-    <ellipse cx="162" cy="122" rx="9" ry="6" fill="#FFB3BF" opacity="0.75"/>
-    <ellipse cx="98" cy="100" rx="5.5" ry="7" fill="#3B2F2F"/>
-    <ellipse cx="142" cy="100" rx="5.5" ry="7" fill="#3B2F2F"/>
-    <circle cx="100" cy="97.5" r="1.8" fill="#FFFFFF"/>
-    <circle cx="144" cy="97.5" r="1.8" fill="#FFFFFF"/>
-    <path d="M112 117 C112 112 128 112 128 117 C128 121 124 124 120 124 C116 124 112 121 112 117 Z" fill="#5B4A4A"/>
+    <ellipse cx="82" cy="129" rx="10" ry="6.5" fill="#FFB0BE" opacity="0.8"/>
+    <ellipse cx="158" cy="129" rx="10" ry="6.5" fill="#FFB0BE" opacity="0.8"/>
+    <ellipse cx="99" cy="114" rx="6" ry="7.5" fill="#3B2F2F"/>
+    <ellipse cx="141" cy="114" rx="6" ry="7.5" fill="#3B2F2F"/>
+    <circle cx="101.2" cy="111" r="2.2" fill="#FFFFFF"/>
+    <circle cx="143.2" cy="111" r="2.2" fill="#FFFFFF"/>
+    <path d="M113 126 C113 122 127 122 127 126 C127 130 123 132 120 132 C117 132 113 130 113 126 Z" fill="#5B4A4A"/>
   </g>
   <g fill="none" stroke="#5B4A4A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
     <!-- 困り眉（内側が上がる） -->
-    <path d="M88 87 L102 82 M152 87 L138 82"/>
-    <path d="M112 133 Q116 129 120 133 Q124 137 128 133"/>
+    <path d="M89 101 L102 97 M151 101 L138 97"/>
+    <path d="M113 139 Q116.5 136 120 139 Q123.5 142 127 139"/>
   </g>
   <!-- ひげ -->
-  <g fill="none" stroke="#5B4A4A" stroke-width="2.2" stroke-linecap="round" opacity="0.55">
-    <path d="M94 128 L76 125 M94 134 L77 137 M146 128 L164 125 M146 134 L163 137"/>
+  <g fill="none" stroke="#5B4A4A" stroke-width="2.2" stroke-linecap="round" opacity="0.5">
+    <path d="M97 134 L80 132 M97 139 L81 142 M143 134 L160 132 M143 139 L159 142"/>
   </g>
 </svg>
