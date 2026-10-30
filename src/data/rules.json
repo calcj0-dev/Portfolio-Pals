@@ -13,7 +13,7 @@
     { "id": "explorer", "all": [["otherReg", "gte", 30]] },
     { "id": "alchemist", "all": [["misc", "gte", 30]] },
     { "id": "dragon", "all": [["gold", "gte", 30]] },
-    { "id": "turtle", "all": [["bond", "gte", 40]] },
+    { "id": "koala", "all": [["bond", "gte", 40]] },
     { "id": "monk", "all": [["world", "gte", 90]] },
     { "id": "dreamer", "all": [["us", "gte", 90]] },
     { "id": "samurai", "all": [["japan", "gte", 50]] },

@@ -12,3 +12,6 @@
 | `dist_10000.md`・`dist_indexheavy_10000.md`・`enumerate_all.md`・`examples.md` | 実行結果（04章の表の元） |
 
 投信だけの人が多い仮定で回すとき：`PERSONAS=personas_indexheavy.json node dist.mjs rules.json 10000`（Windows の PowerShell では `$env:PERSONAS="personas_indexheavy.json"; node dist.mjs rules.json 10000`）
+
+## このリポジトリでの変更
+- 2026-10-30：キャラの修正に合わせ、`turtle` を `koala`（石橋を叩くコアラ）に直した（rules.json・names.json と結果の .md の名前）。判定の条件は変えていないので、結果の数字は同じ
