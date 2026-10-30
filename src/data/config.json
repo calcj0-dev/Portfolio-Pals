@@ -1,4 +1,18 @@
 {
+  "sliderStep": 5,
+  "remainderCategory": "cash",
+  "presets": [
+    { "id": "world100", "values": { "world": 100 } },
+    { "id": "us70cash30", "values": { "us": 70 } },
+    { "id": "cash100", "values": {} }
+  ],
+  "diagnoseMs": 1000,
+  "diagnoseReducedMs": 300,
+  "revealStepMs": 200,
+  "categoryGroups": ["fund", "stock", "other", "cash"],
+  "zukanGroups": ["fund", "stock", "other", "cash", "special"],
+  "hashtag": "#投資キャラ診断",
+  "xPost": { "maxWeight": 280, "urlWeight": 23 },
   "links": {
     "tameru": "https://tameru-lovat.vercel.app/?utm_source=bakage&utm_medium=game&utm_campaign=baka017",
     "tva": "https://trader-vs-autopilot.vercel.app/?utm_source=bakage&utm_medium=game&utm_campaign=baka017",

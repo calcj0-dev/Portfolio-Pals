@@ -1,0 +1,76 @@
+{
+  "categories": [
+    {
+      "id": "world",
+      "group": "fund",
+      "label": "全世界",
+      "color": "#FF9EB1"
+    },
+    {
+      "id": "us",
+      "group": "fund",
+      "label": "米国",
+      "color": "#8EC5FF"
+    },
+    {
+      "id": "japan",
+      "group": "fund",
+      "label": "日本",
+      "color": "#FFB38A"
+    },
+    {
+      "id": "otherReg",
+      "group": "fund",
+      "label": "その他の地域",
+      "color": "#A8DB8F"
+    },
+    {
+      "id": "jpStock",
+      "group": "stock",
+      "label": "日本の個別株",
+      "color": "#F7C873"
+    },
+    {
+      "id": "usStock",
+      "group": "stock",
+      "label": "米国の個別株",
+      "color": "#A9A6F5"
+    },
+    {
+      "id": "otStock",
+      "group": "stock",
+      "label": "その他の個別株",
+      "color": "#D7A8E8"
+    },
+    {
+      "id": "bond",
+      "group": "other",
+      "label": "債券",
+      "color": "#7FD3C4"
+    },
+    {
+      "id": "gold",
+      "group": "other",
+      "label": "金",
+      "color": "#E6C35C"
+    },
+    {
+      "id": "crypto",
+      "group": "other",
+      "label": "暗号資産",
+      "color": "#F59BC9"
+    },
+    {
+      "id": "misc",
+      "group": "other",
+      "label": "その他",
+      "color": "#C4B8A8"
+    },
+    {
+      "id": "cash",
+      "group": "cash",
+      "label": "現金・預金",
+      "color": "#DCE4EA"
+    }
+  ]
+}

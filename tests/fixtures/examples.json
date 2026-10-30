@@ -1,0 +1,24 @@
+{
+  "note": "入力例と期待するタイプ（診断仕様 3.4 と sim/examples.md の19件。T-03）",
+  "examples": [
+    { "input": { "world": 100 }, "expect": "monk" },
+    { "input": { "world": 60, "us": 20, "cash": 15, "gold": 5 }, "expect": "craftsman" },
+    { "input": { "world": 80, "cash": 20 }, "expect": "craftsman" },
+    { "input": { "world": 70, "jpStock": 10, "cash": 20 }, "expect": "craftsman" },
+    { "input": { "world": 60, "us": 30, "cash": 10 }, "expect": "craftsman" },
+    { "input": { "us": 70, "cash": 30 }, "expect": "pioneer" },
+    { "input": { "world": 40, "bond": 30, "cash": 30 }, "expect": "owl" },
+    { "input": { "world": 50, "us": 50 }, "expect": "mediator" },
+    { "input": { "cash": 100 }, "expect": "squirrel" },
+    { "input": { "us": 100 }, "expect": "dreamer" },
+    { "input": { "world": 50, "cash": 50 }, "expect": "otter" },
+    { "input": { "world": 30, "us": 30, "cash": 40 }, "expect": "mediator" },
+    { "input": { "jpStock": 50, "cash": 50 }, "expect": "yutai" },
+    { "input": { "usStock": 50, "cash": 50 }, "expect": "tech" },
+    { "input": { "otStock": 60, "cash": 40 }, "expect": "sheep" },
+    { "input": { "world": 40, "jpStock": 20, "usStock": 15, "cash": 25 }, "expect": "oshi" },
+    { "input": { "world": 50, "crypto": 20, "cash": 30 }, "expect": "boar" },
+    { "input": { "us": 80, "cash": 20 }, "expect": "pioneer" },
+    { "input": { "world": 25, "us": 25, "bond": 25, "gold": 25 }, "expect": "four_kings" }
+  ]
+}

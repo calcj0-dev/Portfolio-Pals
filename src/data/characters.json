@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "characters": [
+    {
+      "id": "monk",
+      "zukanGroup": "fund",
+      "zukanOrder": 1,
+      "good": "craftsman",
+      "bad": "rocket_cat",
+      "image": "chars/monk.svg",
+      "og": "og/monk.png"
+    },
+    {
+      "id": "dreamer",
+      "zukanGroup": "fund",
+      "zukanOrder": 2,
+      "good": "pioneer",
+      "bad": "mediator",
+      "image": "chars/dreamer.svg",
+      "og": "og/dreamer.png"
+    },
+    {
+      "id": "pioneer",
+      "zukanGroup": "fund",
+      "zukanOrder": 3,
+      "good": "dreamer",
+      "bad": "mediator",
+      "image": "chars/pioneer.svg",
+      "og": "og/pioneer.png"
+    },
+    {
+      "id": "mediator",
+      "zukanGroup": "fund",
+      "zukanOrder": 4,
+      "good": "four_kings",
+      "bad": "pioneer",
+      "image": "chars/mediator.svg",
+      "og": "og/mediator.png"
+    },
+    {
+      "id": "samurai",
+      "zukanGroup": "fund",
+      "zukanOrder": 5,
+      "good": "yutai",
+      "bad": "tech",
+      "image": "chars/samurai.svg",
+      "og": "og/samurai.png"
+    },
+    {
+      "id": "explorer",
+      "zukanGroup": "fund",
+      "zukanOrder": 6,
+      "good": "alchemist",
+      "bad": "pioneer",
+      "image": "chars/explorer.svg",
+      "og": "og/explorer.png"
+    },
+    {
+      "id": "craftsman",
+      "zukanGroup": "fund",
+      "zukanOrder": 7,
+      "good": "monk",
+      "bad": "alchemist",
+      "image": "chars/craftsman.svg",
+      "og": "og/craftsman.png"
+    },
+    {
+      "id": "yutai",
+      "zukanGroup": "stock",
+      "zukanOrder": 8,
+      "good": "samurai",
+      "bad": "dreamer",
+      "image": "chars/yutai.svg",
+      "og": "og/yutai.png"
+    },
+    {
+      "id": "tech",
+      "zukanGroup": "stock",
+      "zukanOrder": 9,
+      "good": "rocket_cat",
+      "bad": "samurai",
+      "image": "chars/tech.svg",
+      "og": "og/tech.png"
+    },
+    {
+      "id": "oshi",
+      "zukanGroup": "stock",
+      "zukanOrder": 10,
+      "good": "yutai",
+      "bad": "monk",
+      "image": "chars/oshi.svg",
+      "og": "og/oshi.png"
+    },
+    {
+      "id": "boar",
+      "zukanGroup": "stock",
+      "zukanOrder": 11,
+      "good": "warrior",
+      "bad": "squirrel",
+      "image": "chars/boar.svg",
+      "og": "og/boar.png"
+    },
+    {
+      "id": "warrior",
+      "zukanGroup": "stock",
+      "zukanOrder": 12,
+      "good": "boar",
+      "bad": "turtle",
+      "image": "chars/warrior.svg",
+      "og": "og/warrior.png"
+    },
+    {
+      "id": "dragon",
+      "zukanGroup": "other",
+      "zukanOrder": 13,
+      "good": "turtle",
+      "bad": "rocket_cat",
+      "image": "chars/dragon.svg",
+      "og": "og/dragon.png"
+    },
+    {
+      "id": "turtle",
+      "zukanGroup": "other",
+      "zukanOrder": 14,
+      "good": "squirrel",
+      "bad": "warrior",
+      "image": "chars/turtle.svg",
+      "og": "og/turtle.png"
+    },
+    {
+      "id": "rocket_cat",
+      "zukanGroup": "other",
+      "zukanOrder": 15,
+      "good": "tech",
+      "bad": "squirrel",
+      "image": "chars/rocket_cat.svg",
+      "og": "og/rocket_cat.png"
+    },
+    {
+      "id": "alchemist",
+      "zukanGroup": "other",
+      "zukanOrder": 16,
+      "good": "explorer",
+      "bad": "craftsman",
+      "image": "chars/alchemist.svg",
+      "og": "og/alchemist.png"
+    },
+    {
+      "id": "owl",
+      "zukanGroup": "other",
+      "zukanOrder": 17,
+      "good": "otter",
+      "bad": "rocket_cat",
+      "image": "chars/owl.svg",
+      "og": "og/owl.png"
+    },
+    {
+      "id": "squirrel",
+      "zukanGroup": "cash",
+      "zukanOrder": 18,
+      "good": "turtle",
+      "bad": "rocket_cat",
+      "image": "chars/squirrel.svg",
+      "og": "og/squirrel.png"
+    },
+    {
+      "id": "otter",
+      "zukanGroup": "cash",
+      "zukanOrder": 19,
+      "good": "owl",
+      "bad": "warrior",
+      "image": "chars/otter.svg",
+      "og": "og/otter.png"
+    },
+    {
+      "id": "four_kings",
+      "zukanGroup": "special",
+      "zukanOrder": 20,
+      "good": "mediator",
+      "bad": "octopus",
+      "image": "chars/four_kings.svg",
+      "og": "og/four_kings.png"
+    },
+    {
+      "id": "octopus",
+      "zukanGroup": "special",
+      "zukanOrder": 21,
+      "good": "sheep",
+      "bad": "four_kings",
+      "image": "chars/octopus.svg",
+      "og": "og/octopus.png"
+    },
+    {
+      "id": "sheep",
+      "zukanGroup": "special",
+      "zukanOrder": 22,
+      "good": "octopus",
+      "bad": "four_kings",
+      "image": "chars/sheep.svg",
+      "og": "og/sheep.png"
+    }
+  ]
+}

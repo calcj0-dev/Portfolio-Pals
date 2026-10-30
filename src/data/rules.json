@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "note": "上から順に評価し、all の条件をすべて満たした最初のキャラに決める。条件は [指標, 比較, 値]。最後の sheep は条件なし（受け皿）",
+  "rules": [
+    { "id": "mediator", "all": [["world", "gte", 30], ["us", "gte", 30], ["absWorldUs", "lte", 10]] },
+    { "id": "four_kings", "all": [["count25", "eq", 4]] },
+    { "id": "octopus", "all": [["count5", "gte", 7]] },
+    { "id": "squirrel", "all": [["cash", "gte", 90]] },
+    { "id": "rocket_cat", "all": [["crypto", "gte", 40]] },
+    { "id": "yutai", "all": [["jpStock", "gte", 40]] },
+    { "id": "tech", "all": [["usStock", "gte", 40]] },
+    { "id": "oshi", "all": [["jpStock", "gte", 10], ["foreignStocks", "gte", 10], ["stocks", "gte", 30]] },
+    { "id": "explorer", "all": [["otherReg", "gte", 30]] },
+    { "id": "alchemist", "all": [["misc", "gte", 30]] },
+    { "id": "dragon", "all": [["gold", "gte", 30]] },
+    { "id": "turtle", "all": [["bond", "gte", 40]] },
+    { "id": "monk", "all": [["world", "gte", 90]] },
+    { "id": "dreamer", "all": [["us", "gte", 90]] },
+    { "id": "samurai", "all": [["japan", "gte", 50]] },
+    { "id": "warrior", "all": [["cash", "lt", 5], ["equity", "gte", 90]] },
+    { "id": "otter", "all": [["cash", "gte", 50], ["cash", "lte", 89]] },
+    { "id": "boar", "all": [["attack", "gte", 20], ["attack", "lte", 39]] },
+    { "id": "pioneer", "all": [["usMinusWorld", "gt", 0], ["index", "gte", 60]] },
+    { "id": "owl", "all": [["defense", "gte", 30], ["defense", "lte", 60], ["index", "gte", 30]] },
+    { "id": "craftsman", "all": [["index", "gte", 70], ["cash", "gte", 10], ["cash", "lte", 30]] },
+    { "id": "sheep", "all": [] }
+  ]
+}
