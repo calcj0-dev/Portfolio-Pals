@@ -1,0 +1,64 @@
+{
+ "categories": [
+  {
+   "id": "world",
+   "group": "fund",
+   "label": "全世界"
+  },
+  {
+   "id": "us",
+   "group": "fund",
+   "label": "米国"
+  },
+  {
+   "id": "japan",
+   "group": "fund",
+   "label": "日本"
+  },
+  {
+   "id": "otherReg",
+   "group": "fund",
+   "label": "その他の地域"
+  },
+  {
+   "id": "jpStock",
+   "group": "stock",
+   "label": "日本の個別株"
+  },
+  {
+   "id": "usStock",
+   "group": "stock",
+   "label": "米国の個別株"
+  },
+  {
+   "id": "otStock",
+   "group": "stock",
+   "label": "その他の個別株"
+  },
+  {
+   "id": "bond",
+   "group": "other",
+   "label": "債券"
+  },
+  {
+   "id": "gold",
+   "group": "other",
+   "label": "金"
+  },
+  {
+   "id": "crypto",
+   "group": "other",
+   "label": "暗号資産"
+  },
+  {
+   "id": "misc",
+   "group": "other",
+   "label": "その他"
+  },
+  {
+   "id": "cash",
+   "group": "cash",
+   "label": "現金・預金"
+  }
+ ]
+}

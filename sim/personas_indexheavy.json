@@ -1,0 +1,314 @@
+{
+ "note": "実際にありそうな構成比の『型』と出る重み。設計担当の仮定（NISA・積立が中心の X の投資クラスタを想定）。数値は割合(%)の範囲 [最小, 最大]。指定のない分は現金・預金に入れる",
+ "personas": [
+  {
+   "id": "world_only",
+   "label": "全世界の投信が中心",
+   "weight": 30,
+   "parts": {
+    "world": [
+     70,
+     100
+    ]
+   }
+  },
+  {
+   "id": "us_only",
+   "label": "米国の投信が中心",
+   "weight": 20,
+   "parts": {
+    "us": [
+     70,
+     100
+    ]
+   }
+  },
+  {
+   "id": "world_us",
+   "label": "全世界と米国の両方",
+   "weight": 20,
+   "parts": {
+    "world": [
+     30,
+     70
+    ],
+    "us": [
+     20,
+     50
+    ]
+   }
+  },
+  {
+   "id": "index_cash",
+   "label": "投信＋現金多め（始めたばかり）",
+   "weight": 15,
+   "pick": {
+    "from": [
+     "world",
+     "us"
+    ],
+    "range": [
+     30,
+     60
+    ]
+   }
+  },
+  {
+   "id": "index_jp",
+   "label": "投信＋日本の個別株（配当・優待）",
+   "weight": 10,
+   "pick": {
+    "from": [
+     "world",
+     "us"
+    ],
+    "range": [
+     40,
+     70
+    ]
+   },
+   "parts": {
+    "jpStock": [
+     10,
+     40
+    ]
+   }
+  },
+  {
+   "id": "index_us",
+   "label": "投信＋米国の個別株",
+   "weight": 5,
+   "pick": {
+    "from": [
+     "world",
+     "us"
+    ],
+    "range": [
+     40,
+     70
+    ]
+   },
+   "parts": {
+    "usStock": [
+     10,
+     40
+    ]
+   }
+  },
+  {
+   "id": "both_stocks",
+   "label": "投信＋日本と海外の個別株",
+   "weight": 3,
+   "pick": {
+    "from": [
+     "world",
+     "us"
+    ],
+    "range": [
+     30,
+     60
+    ]
+   },
+   "parts": {
+    "jpStock": [
+     10,
+     30
+    ],
+    "usStock": [
+     5,
+     25
+    ],
+    "otStock": [
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "jp_stock",
+   "label": "日本の個別株が中心",
+   "weight": 5,
+   "parts": {
+    "jpStock": [
+     50,
+     90
+    ]
+   }
+  },
+  {
+   "id": "us_stock",
+   "label": "米国の個別株が中心",
+   "weight": 3,
+   "parts": {
+    "usStock": [
+     50,
+     90
+    ]
+   }
+  },
+  {
+   "id": "index_crypto",
+   "label": "投信＋暗号資産",
+   "weight": 5,
+   "pick": {
+    "from": [
+     "world",
+     "us"
+    ],
+    "range": [
+     30,
+     60
+    ]
+   },
+   "parts": {
+    "crypto": [
+     10,
+     40
+    ]
+   }
+  },
+  {
+   "id": "crypto",
+   "label": "暗号資産が中心",
+   "weight": 2,
+   "parts": {
+    "crypto": [
+     50,
+     90
+    ]
+   }
+  },
+  {
+   "id": "cash_heavy",
+   "label": "ほぼ現金",
+   "weight": 6,
+   "pick": {
+    "from": [
+     "world",
+     "us"
+    ],
+    "range": [
+     0,
+     20
+    ]
+   }
+  },
+  {
+   "id": "balance",
+   "label": "債券も持つバランス型",
+   "weight": 5,
+   "parts": {
+    "world": [
+     30,
+     50
+    ],
+    "bond": [
+     20,
+     40
+    ],
+    "gold": [
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "gold",
+   "label": "金が多め",
+   "weight": 2,
+   "parts": {
+    "gold": [
+     30,
+     60
+    ],
+    "world": [
+     10,
+     40
+    ]
+   }
+  },
+  {
+   "id": "misc",
+   "label": "REIT・保険などが多め",
+   "weight": 3,
+   "pick": {
+    "from": [
+     "world",
+     "us"
+    ],
+    "range": [
+     20,
+     50
+    ]
+   },
+   "parts": {
+    "misc": [
+     20,
+     50
+    ]
+   }
+  },
+  {
+   "id": "other_region",
+   "label": "新興国などが多め",
+   "weight": 2,
+   "parts": {
+    "otherReg": [
+     30,
+     50
+    ],
+    "world": [
+     10,
+     40
+    ]
+   }
+  },
+  {
+   "id": "japan_index",
+   "label": "日本株の投信が中心",
+   "weight": 3,
+   "parts": {
+    "japan": [
+     40,
+     80
+    ]
+   }
+  },
+  {
+   "id": "diversifier",
+   "label": "いろいろ少しずつ",
+   "weight": 2,
+   "spread": {
+    "count": [
+     6,
+     10
+    ],
+    "range": [
+     5,
+     20
+    ]
+   }
+  },
+  {
+   "id": "ot_stock",
+   "label": "その他の国の個別株が多め",
+   "weight": 1,
+   "pick": {
+    "from": [
+     "world",
+     "us"
+    ],
+    "range": [
+     20,
+     50
+    ]
+   },
+   "parts": {
+    "otStock": [
+     20,
+     50
+    ]
+   }
+  }
+ ]
+}
