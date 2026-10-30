@@ -8,4 +8,6 @@ export const session = {
   presetId: null as string | null,
   /** 直前の結果のタイプID */
   resultType: null as string | null,
+  /** 直前の結果が初めて発見したキャラか */
+  newFound: false,
 };

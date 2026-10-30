@@ -34,6 +34,29 @@ export const MESSAGE_KEYS = [
   'help.to',
   'help.note',
 
+  'common.quote',
+  'common.unknown',
+
+  'diagnosing.reading',
+
+  'result.heading',
+  'result.share',
+  'result.retry',
+  'result.traits',
+  'result.aruaru',
+  'result.compat',
+  'result.goodMark',
+  'result.badMark',
+  'result.proverb',
+  'result.pie',
+  'result.newFound',
+  'result.tameruHeading',
+  'result.tameruBody',
+  'result.tameruButton',
+  'result.tvaHeading',
+  'result.tvaButton',
+  'result.follow',
+
   'share.post',
 ] as const;
 
