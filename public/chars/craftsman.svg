@@ -1,47 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-  <g stroke="#5B4A4A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#3F3536" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
     <!-- しっぽ -->
-    <path d="M150 196 C166 184 196 186 204 201 C210 214 191 221 172 215 C161 211 154 204 150 196 Z" fill="#8F6D57"/>
-    <!-- 足 -->
-    <ellipse cx="102" cy="214" rx="12" ry="7" fill="#A97A55"/>
-    <ellipse cx="138" cy="214" rx="12" ry="7" fill="#A97A55"/>
-    <!-- 体（小さく） -->
-    <path d="M79 184 C77 158 97 146 120 146 C144 146 163 158 161 184 C160 206 143 217 120 216 C97 217 80 206 79 184 Z" fill="#CC9A70"/>
-    <path d="M98 190 C98 176 108 170 120 170 C132 170 142 176 142 190 C142 204 132 210 120 210 C108 210 98 204 98 190 Z" fill="#F2DCC2" stroke="none"/>
-    <!-- 小さな丸太 -->
-    <path d="M92 168 C108 165 132 165 148 168 L148 184 C132 187 108 187 92 184 Z" fill="#E2AE73" stroke-width="4"/>
-    <ellipse cx="92" cy="176" rx="5" ry="8" fill="#F2CF9E" stroke-width="4"/>
-    <!-- 手 -->
-    <ellipse cx="102" cy="173" rx="8" ry="7.5" fill="#CC9A70" stroke-width="4"/>
-    <ellipse cx="138" cy="173" rx="8" ry="7.5" fill="#CC9A70" stroke-width="4"/>
-    <!-- 耳 -->
-    <circle cx="68" cy="58" r="10" fill="#A97A55"/>
-    <circle cx="172" cy="58" r="10" fill="#A97A55"/>
-    <!-- 頭（大きく丸い） -->
-    <path d="M49 101 C47 64 79 42 121 43 C162 43 193 64 191 101 C190 135 159 153 120 153 C80 154 50 135 49 101 Z" fill="#CC9A70"/>
-    <!-- ねじり鉢巻き（おでこ） -->
-    <path d="M52 78 C82 60 158 60 188 78 L186 91 C158 75 82 75 54 91 Z" fill="#FFFFFF"/>
-    <path d="M189 82 C199 76 207 80 205 88 C203 95 195 93 190 88 M190 88 C195 97 192 106 184 106" fill="#FFFFFF"/>
+    <path d="M152 192 C166 182 194 184 201 197 C206 209 189 215 172 210 C162 207 156 200 152 192 Z" fill="#B99781"/>
+    <!-- 体（頭とほぼひとかたまり。短い足） -->
+    <path d="M80 146 C70 166 70 196 82 207 C86 214 98 216 105 213 C111 216 129 216 135 213 C142 216 154 214 158 207 C170 196 170 166 160 146 Z" fill="#EDD3B8"/>
+    <path d="M102 178 C102 168 110 163 120 163 C130 163 138 168 138 178 C138 196 131 206 120 206 C109 206 102 196 102 178 Z" fill="#FAEBDC" stroke="none"/>
+    <!-- 小さな丸太と手 -->
+    <path d="M98 168 C110 166 130 166 142 168 L142 180 C130 182 110 182 98 180 Z" fill="#F0C995" stroke-width="3"/>
+    <ellipse cx="98" cy="174" rx="4" ry="6" fill="#F8E0BC" stroke-width="3"/>
+    <ellipse cx="106" cy="174" rx="6.5" ry="6" fill="#EDD3B8" stroke-width="3"/>
+    <ellipse cx="136" cy="174" rx="6.5" ry="6" fill="#EDD3B8" stroke-width="3"/>
+    <!-- 小さな耳 -->
+    <circle cx="72" cy="62" r="7" fill="#DDBB9C" stroke-width="3"/>
+    <circle cx="168" cy="62" r="7" fill="#DDBB9C" stroke-width="3"/>
+    <!-- 頭（まるいおもち形） -->
+    <path d="M50 106 C48 72 79 54 121 54 C162 54 193 72 190 107 C188 138 159 154 120 153 C81 154 52 138 50 106 Z" fill="#EDD3B8"/>
+    <!-- ねじり鉢巻き -->
+    <path d="M56 84 C84 68 156 68 184 84 L182 94 C156 80 84 80 58 94 Z" fill="#FFFFFF" stroke-width="3"/>
+    <path d="M185 86 C193 81 200 84 198 90 C196 96 190 94 186 90 M186 90 C190 97 187 104 181 104" fill="#FFFFFF" stroke-width="3"/>
   </g>
-  <!-- 鉢巻きのねじれ・しっぽの模様 -->
-  <g fill="none" stroke="#9DB7DE" stroke-width="3" stroke-linecap="round">
-    <path d="M68 84 L74 72 M88 78 L94 67 M108 75 L114 64 M128 75 L134 64 M148 78 L154 67 M166 84 L172 72"/>
+  <g fill="none" stroke="#A9C2E6" stroke-width="2.4" stroke-linecap="round">
+    <path d="M72 89 L77 79 M92 84 L97 74 M112 81 L117 71 M132 81 L137 71 M152 84 L157 74 M170 89 L175 79"/>
   </g>
-  <g fill="none" stroke="#6E5241" stroke-width="2.5" stroke-linecap="round" opacity="0.55">
-    <path d="M166 197 L190 212 M178 192 L200 205 M174 212 L194 197"/>
+  <g fill="none" stroke="#8C6E5B" stroke-width="2" stroke-linecap="round" opacity="0.6">
+    <path d="M166 194 L188 207 M178 190 L196 201"/>
   </g>
-  <!-- 口元の明るいところ -->
-  <ellipse cx="120" cy="125" rx="24" ry="16" fill="#F2DCC2"/>
-  <!-- 顔（全キャラ共通の形。パーツは顔の下のほうに寄せる） -->
+  <!-- 顔 -->
   <g stroke="none">
-    <ellipse cx="82" cy="119" rx="10" ry="6.5" fill="#FFB0BE" opacity="0.8"/>
-    <ellipse cx="158" cy="119" rx="10" ry="6.5" fill="#FFB0BE" opacity="0.8"/>
-    <ellipse cx="99" cy="105" rx="6" ry="7.5" fill="#3B2F2F"/>
-    <ellipse cx="141" cy="105" rx="6" ry="7.5" fill="#3B2F2F"/>
-    <circle cx="101.2" cy="102" r="2.2" fill="#FFFFFF"/>
-    <circle cx="143.2" cy="102" r="2.2" fill="#FFFFFF"/>
-    <path d="M113 116 C113 112 127 112 127 116 C127 120 123 122 120 122 C117 122 113 120 113 116 Z" fill="#5B4A4A"/>
+    <ellipse cx="80" cy="122" rx="11" ry="7" fill="#FFBFC8"/>
+    <ellipse cx="160" cy="122" rx="11" ry="7" fill="#FFBFC8"/>
+    <ellipse cx="94" cy="108" rx="5" ry="6.5" fill="#2E2627"/>
+    <ellipse cx="146" cy="108" rx="5" ry="6.5" fill="#2E2627"/>
+    <circle cx="95.8" cy="105.5" r="1.9" fill="#FFFFFF"/>
+    <circle cx="147.8" cy="105.5" r="1.9" fill="#FFFFFF"/>
+    <path d="M115 114 C115 111 125 111 125 114 C125 117 122 118 120 118 C118 118 115 117 115 114 Z" fill="#3F3536"/>
   </g>
-  <!-- 前歯 -->
-  <path d="M115 127 L125 127 L125 135 C125 137 115 137 115 135 Z M120 127 L120 136" fill="#FFFFFF" stroke="#5B4A4A" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="none" stroke="#3F3536" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M114 121 Q117 124 120 121 Q123 124 126 121" stroke-width="2.6"/>
+    <!-- 前歯 -->
+    <path d="M116.5 124 L123.5 124 L123.5 130 C123.5 131.5 116.5 131.5 116.5 130 Z M120 124 L120 131" fill="#FFFFFF" stroke-width="2.2"/>
+    <!-- 照れ線 -->
+    <path d="M74 126 L78 119 M80 126 L84 119 M86 126 L90 119 M150 126 L154 119 M156 126 L160 119 M162 126 L166 119" stroke="#F08A9B" stroke-width="1.8"/>
+  </g>
 </svg>
