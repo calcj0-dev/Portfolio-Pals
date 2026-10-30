@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <g stroke="#5B4A4A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- しっぽ -->
+    <path d="M152 194 C172 181 206 183 215 201 C222 217 199 225 176 218 C164 214 156 205 152 194 Z" fill="#8F6D57"/>
+    <!-- 足 -->
+    <ellipse cx="97" cy="217" rx="15" ry="8.5" fill="#A97A55"/>
+    <ellipse cx="143" cy="217" rx="15" ry="8.5" fill="#A97A55"/>
+    <!-- 体 -->
+    <path d="M65 172 C61 136 91 121 120 122 C151 121 181 137 177 173 C174 205 151 220 120 219 C89 220 67 204 65 172 Z" fill="#CC9A70"/>
+    <path d="M90 184 C89 163 104 155 120 155 C137 155 151 163 150 184 C149 203 136 212 120 212 C104 212 91 203 90 184 Z" fill="#F2DCC2"/>
+    <!-- 丸太 -->
+    <path d="M78 162 C100 158 140 158 162 162 L162 184 C140 188 100 188 78 184 Z" fill="#E2AE73"/>
+    <ellipse cx="78" cy="173" rx="7" ry="11" fill="#F2CF9E"/>
+    <!-- 手 -->
+    <ellipse cx="93" cy="168" rx="10" ry="9" fill="#CC9A70"/>
+    <ellipse cx="147" cy="168" rx="10" ry="9" fill="#CC9A70"/>
+    <!-- 耳 -->
+    <circle cx="76" cy="60" r="11" fill="#A97A55"/>
+    <circle cx="164" cy="60" r="11" fill="#A97A55"/>
+    <!-- 頭 -->
+    <path d="M60 101 C58 66 86 47 120 47 C156 47 183 65 180 101 C179 132 155 149 120 149 C85 150 61 132 60 101 Z" fill="#CC9A70"/>
+    <!-- 鼻先 -->
+    <path d="M95 119 C94 106 106 100 120 100 C135 100 146 106 145 119 C145 132 134 139 120 139 C106 139 95 132 95 119 Z" fill="#F2DCC2"/>
+    <!-- 前歯 -->
+    <path d="M113 127 L127 127 L127 138 C127 141 113 141 113 138 Z" fill="#FFFFFF" stroke-width="4"/>
+    <path d="M120 128 L120 139" fill="none" stroke-width="3"/>
+    <!-- ねじり鉢巻き -->
+    <path d="M62 80 C88 64 152 64 178 80 L176 94 C152 80 88 80 64 94 Z" fill="#FFFFFF"/>
+    <path d="M179 84 C190 78 198 82 196 90 C194 97 186 95 181 90 M181 90 C186 98 184 108 176 108" fill="#FFFFFF"/>
+  </g>
+  <!-- 鉢巻きのねじれ・しっぽの模様 -->
+  <g fill="none" stroke="#9DB7DE" stroke-width="3" stroke-linecap="round">
+    <path d="M78 87 L84 75 M96 82 L102 71 M114 80 L120 69 M132 80 L138 69 M150 82 L156 71"/>
+  </g>
+  <g fill="none" stroke="#6E5241" stroke-width="2.5" stroke-linecap="round" opacity="0.6">
+    <path d="M168 196 L196 214 M182 190 L208 206 M178 214 L200 196 M192 218 L210 202"/>
+  </g>
+  <!-- 顔（全キャラ共通の形） -->
+  <g stroke="none">
+    <ellipse cx="80" cy="117" rx="9" ry="6" fill="#FFB3BF" opacity="0.75"/>
+    <ellipse cx="160" cy="117" rx="9" ry="6" fill="#FFB3BF" opacity="0.75"/>
+    <ellipse cx="98" cy="101" rx="5.5" ry="7" fill="#3B2F2F"/>
+    <ellipse cx="142" cy="101" rx="5.5" ry="7" fill="#3B2F2F"/>
+    <circle cx="100" cy="98.5" r="1.8" fill="#FFFFFF"/>
+    <circle cx="144" cy="98.5" r="1.8" fill="#FFFFFF"/>
+    <path d="M113 109 C113 105 127 105 127 109 C127 113 123 116 120 116 C117 116 113 113 113 109 Z" fill="#5B4A4A"/>
+  </g>
+  <path d="M110 121 Q115 126 120 121 Q125 126 130 121" fill="none" stroke="#5B4A4A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

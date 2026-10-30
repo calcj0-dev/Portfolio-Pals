@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <g stroke="#5B4A4A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 足 -->
+    <ellipse cx="97" cy="217" rx="15" ry="8.5" fill="#B88E68"/>
+    <ellipse cx="143" cy="217" rx="15" ry="8.5" fill="#B88E68"/>
+    <!-- 体 -->
+    <path d="M65 172 C61 136 91 122 120 123 C151 122 181 137 177 173 C174 205 151 220 120 219 C89 220 67 204 65 172 Z" fill="#CFA67E"/>
+    <!-- 袈裟 -->
+    <path d="M70 154 C86 134 104 127 121 125 C146 148 163 174 173 188 C162 208 143 219 119 219 C95 219 75 206 67 182 C66 172 67 162 70 154 Z" fill="#F4A55A"/>
+    <path d="M103 129 C126 155 145 183 157 208" fill="none" stroke="#D97B38" stroke-width="5"/>
+    <!-- 合わせた手 -->
+    <path d="M110 153 C103 158 103 180 112 184 C117 186 120 180 120 172 C120 162 116 151 110 153 Z" fill="#CFA67E"/>
+    <path d="M130 153 C137 158 137 180 128 184 C123 186 120 180 120 172 C120 162 124 151 130 153 Z" fill="#CFA67E"/>
+    <!-- 耳（小さく頭の上） -->
+    <path d="M70 60 C66 50 74 43 83 46 C89 48 89 56 84 61 Z" fill="#B88E68"/>
+    <path d="M170 60 C174 50 166 43 157 46 C151 48 151 56 156 61 Z" fill="#B88E68"/>
+    <!-- 頭（横に広く上が平らな四角い顔） -->
+    <path d="M55 94 C54 64 79 51 120 51 C161 51 186 64 185 95 C185 129 161 146 120 146 C79 147 56 129 55 94 Z" fill="#CFA67E"/>
+    <!-- 大きな鼻先 -->
+    <path d="M80 113 C80 99 97 93 120 93 C143 93 160 99 160 113 C160 131 143 141 120 141 C97 141 80 131 80 113 Z" fill="#E4C6A3"/>
+  </g>
+  <!-- 顔（全キャラ共通の形） -->
+  <g stroke="none">
+    <ellipse cx="70" cy="106" rx="9" ry="6" fill="#FFB3BF" opacity="0.75"/>
+    <ellipse cx="170" cy="106" rx="9" ry="6" fill="#FFB3BF" opacity="0.75"/>
+    <ellipse cx="94" cy="78" rx="5.5" ry="7" fill="#3B2F2F"/>
+    <ellipse cx="146" cy="78" rx="5.5" ry="7" fill="#3B2F2F"/>
+    <circle cx="96" cy="75.5" r="1.8" fill="#FFFFFF"/>
+    <circle cx="148" cy="75.5" r="1.8" fill="#FFFFFF"/>
+  </g>
+  <g fill="none" stroke="#5B4A4A" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 小さな鼻の穴（鼻先の上のほう） -->
+    <path d="M106 104 L112 106 M134 104 L128 106" stroke-width="4"/>
+    <path d="M113 121 Q120 127 127 121" stroke-width="4"/>
+  </g>
+</svg>
