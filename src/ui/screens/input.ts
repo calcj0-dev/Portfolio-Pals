@@ -74,27 +74,39 @@ export const inputScreen: ScreenFactory = (app) => {
       chip.setAttribute('aria-pressed', String(on));
     }
     valueEls.clear();
+    // ①と同じグループに分け、タップした順ではなく区分の決まった順に並べる
+    const row = (id: string) => {
+      const valueEl = h('span', { className: 'row-value' });
+      valueEls.set(id, valueEl);
+      const slider = createSlider({
+        label: categoryName(id),
+        color: colorOf(id),
+        value: session.input.values[id] ?? 0,
+        step: r.step,
+        format: percent,
+        onInput: (v) => {
+          session.input = setValue(session.input, id, v, r);
+          session.presetId = null;
+          paintValues();
+          return session.input.values[id] ?? 0;
+        },
+      });
+      return h('div', { className: 'row' }, [
+        h('div', { className: 'row-head' }, [h('span', { className: 'row-name', text: categoryName(id) }), valueEl]),
+        h('p', { className: 'row-note', text: localeData().categories[id]?.note ?? '' }),
+        slider.el,
+      ]);
+    };
     rows.replaceChildren(
-      ...session.input.selected.map((id) => {
-        const valueEl = h('span', { className: 'row-value' });
-        valueEls.set(id, valueEl);
-        const slider = createSlider({
-          label: categoryName(id),
-          color: colorOf(id),
-          value: session.input.values[id] ?? 0,
-          step: r.step,
-          format: percent,
-          onInput: (v) => {
-            session.input = setValue(session.input, id, v, r);
-            session.presetId = null;
-            paintValues();
-            return session.input.values[id] ?? 0;
-          },
-        });
-        return h('div', { className: 'row' }, [
-          h('div', { className: 'row-head' }, [h('span', { className: 'row-name', text: categoryName(id) }), valueEl]),
-          slider.el,
-        ]);
+      ...config.categoryGroups.flatMap((g) => {
+        const ids = categories.filter((c) => c.group === g && session.input.selected.includes(c.id)).map((c) => c.id);
+        if (ids.length === 0) return [];
+        return [
+          h('div', { className: 'row-group' }, [
+            h('h3', { className: 'chip-group-name', text: localeData().categoryGroups[g] ?? g }),
+            ...ids.map(row),
+          ]),
+        ];
       }),
     );
     paintValues();

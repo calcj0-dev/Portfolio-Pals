@@ -1,9 +1,10 @@
 // S1 タイトル（画面設計 4章）。キャラの絵・図鑑・プライバシーはあとで足す
 
 import { track } from '../../analytics';
+import { config } from '../../data';
 import { t } from '../../i18n';
 import type { ScreenFactory } from '../app';
-import { button, h } from '../dom';
+import { button, externalLink, h } from '../dom';
 import { soundButton, versionLabel } from '../parts';
 
 export const titleScreen: ScreenFactory = (app) => {
@@ -22,7 +23,7 @@ export const titleScreen: ScreenFactory = (app) => {
       'btn btn-primary btn-big',
     ),
     h('p', { className: 'small', text: t('title.safe') }),
-    h('p', { className: 'small', text: t('title.credit') }),
+    externalLink(t('title.credit'), config.links.follow),
   ]);
   return { el, unmount: sound.dispose };
 };

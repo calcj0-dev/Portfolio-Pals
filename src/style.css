@@ -438,3 +438,20 @@ button {
     animation: none;
   }
 }
+
+/* ②：①と同じグループに分ける。名前の下に「入れるもの」を小さく出す */
+.row-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.row-group + .row-group {
+  margin-top: 8px;
+}
+
+.row-note {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.4;
+}

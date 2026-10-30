@@ -2,7 +2,7 @@
   "messages": {
     "common.disclaimer": "本作はジョークの診断であり、投資助言ではありません。",
     "title.main": "投資キャラ診断",
-    "title.sub": "資産構成を入れるだけ。質問ゼロ。",
+    "title.sub": "資産構成を入れるだけ。",
     "title.preparing": "ただいま準備中です",
     "common.back": "もどる",
     "common.close": "閉じる",
@@ -18,7 +18,7 @@
     "input.step2": "② 割合を入れる（5%ずつ）",
     "input.remainder": "{name}（残り）",
     "input.note": "だいたいでOK。金額は聞きません",
-    "input.reset": "最初から",
+    "input.reset": "リセット",
     "input.diagnose": "診断する",
     "pie.label": "あなたの円グラフ",
     "help.heading": "迷いやすいものの入れ方",
