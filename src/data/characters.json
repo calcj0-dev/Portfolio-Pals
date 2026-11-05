@@ -8,7 +8,7 @@
       "zukanOrder": 1,
       "good": "craftsman",
       "bad": "rocket_cat",
-      "image": "chars/monk.svg",
+      "image": "chars/monk.webp",
       "og": "og/monk.png"
     },
     {
@@ -18,7 +18,7 @@
       "zukanOrder": 2,
       "good": "pioneer",
       "bad": "mediator",
-      "image": "chars/dreamer.svg",
+      "image": "chars/dreamer.webp",
       "og": "og/dreamer.png"
     },
     {
@@ -28,7 +28,7 @@
       "zukanOrder": 3,
       "good": "tech",
       "bad": "mediator",
-      "image": "chars/pioneer.svg",
+      "image": "chars/pioneer.webp",
       "og": "og/pioneer.png"
     },
     {
@@ -38,7 +38,7 @@
       "zukanOrder": 4,
       "good": "owl",
       "bad": "pioneer",
-      "image": "chars/mediator.svg",
+      "image": "chars/mediator.webp",
       "og": "og/mediator.png"
     },
     {
@@ -48,7 +48,7 @@
       "zukanOrder": 5,
       "good": "mekiki",
       "bad": "tech",
-      "image": "chars/samurai.svg",
+      "image": "chars/samurai.webp",
       "og": "og/samurai.png"
     },
     {
@@ -58,7 +58,7 @@
       "zukanOrder": 6,
       "good": "alchemist",
       "bad": "pioneer",
-      "image": "chars/explorer.svg",
+      "image": "chars/explorer.webp",
       "og": "og/explorer.png"
     },
     {
@@ -68,7 +68,7 @@
       "zukanOrder": 7,
       "good": "monk",
       "bad": "otter",
-      "image": "chars/craftsman.svg",
+      "image": "chars/craftsman.webp",
       "og": "og/craftsman.png"
     },
     {
@@ -78,7 +78,7 @@
       "zukanOrder": 8,
       "good": "tech",
       "bad": "pioneer",
-      "image": "chars/mekiki.svg",
+      "image": "chars/mekiki.webp",
       "og": "og/mekiki.png"
     },
     {
@@ -88,7 +88,7 @@
       "zukanOrder": 9,
       "good": "rocket_cat",
       "bad": "monk",
-      "image": "chars/tech.svg",
+      "image": "chars/tech.webp",
       "og": "og/tech.png"
     },
     {
@@ -98,7 +98,7 @@
       "zukanOrder": 10,
       "good": "mekiki",
       "bad": "monk",
-      "image": "chars/oshi.svg",
+      "image": "chars/oshi.webp",
       "og": "og/oshi.png"
     },
     {
@@ -108,7 +108,7 @@
       "zukanOrder": 11,
       "good": "warrior",
       "bad": "squirrel",
-      "image": "chars/boar.svg",
+      "image": "chars/boar.webp",
       "og": "og/boar.png"
     },
     {
@@ -118,7 +118,7 @@
       "zukanOrder": 12,
       "good": "boar",
       "bad": "koala",
-      "image": "chars/warrior.svg",
+      "image": "chars/warrior.webp",
       "og": "og/warrior.png"
     },
     {
@@ -128,7 +128,7 @@
       "zukanOrder": 13,
       "good": "koala",
       "bad": "rocket_cat",
-      "image": "chars/dragon.svg",
+      "image": "chars/dragon.webp",
       "og": "og/dragon.png"
     },
     {
@@ -138,7 +138,7 @@
       "zukanOrder": 14,
       "good": "squirrel",
       "bad": "warrior",
-      "image": "chars/koala.svg",
+      "image": "chars/koala.webp",
       "og": "og/koala.png"
     },
     {
@@ -148,7 +148,7 @@
       "zukanOrder": 15,
       "good": "tech",
       "bad": "otter",
-      "image": "chars/rocket_cat.svg",
+      "image": "chars/rocket_cat.webp",
       "og": "og/rocket_cat.png"
     },
     {
@@ -158,7 +158,7 @@
       "zukanOrder": 16,
       "good": "explorer",
       "bad": "craftsman",
-      "image": "chars/alchemist.svg",
+      "image": "chars/alchemist.webp",
       "og": "og/alchemist.png"
     },
     {
@@ -168,7 +168,7 @@
       "zukanOrder": 17,
       "good": "otter",
       "bad": "rocket_cat",
-      "image": "chars/owl.svg",
+      "image": "chars/owl.webp",
       "og": "og/owl.png"
     },
     {
@@ -178,7 +178,7 @@
       "zukanOrder": 18,
       "good": "koala",
       "bad": "rocket_cat",
-      "image": "chars/squirrel.svg",
+      "image": "chars/squirrel.webp",
       "og": "og/squirrel.png"
     },
     {
@@ -188,7 +188,7 @@
       "zukanOrder": 19,
       "good": "owl",
       "bad": "rocket_cat",
-      "image": "chars/otter.svg",
+      "image": "chars/otter.webp",
       "og": "og/otter.png"
     },
     {
@@ -198,7 +198,7 @@
       "zukanOrder": 20,
       "good": "mediator",
       "bad": "octopus",
-      "image": "chars/four_kings.svg",
+      "image": "chars/four_kings.webp",
       "og": "og/four_kings.png"
     },
     {
@@ -208,7 +208,7 @@
       "zukanOrder": 21,
       "good": "sheep",
       "bad": "four_kings",
-      "image": "chars/octopus.svg",
+      "image": "chars/octopus.webp",
       "og": "og/octopus.png"
     },
     {
@@ -218,7 +218,7 @@
       "zukanOrder": 22,
       "good": "owl",
       "bad": "craftsman",
-      "image": "chars/sheep.svg",
+      "image": "chars/sheep.webp",
       "og": "og/sheep.png"
     }
   ]

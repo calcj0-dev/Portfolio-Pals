@@ -8,7 +8,8 @@
    - ChatGPT のときは、共通の指示の `Plain pure white background` を `Transparent background (PNG)` に置き換える（背景が透明の PNG で出せる）
 2. 何枚か作り、気に入った1枚を、できるだけ大きいサイズで保存する
 3. `art/raw/<タイプID>.png`（または .jpg）として置く。例：`art/raw/monk.png`
-4. 開発担当に「置いた」と伝える → 背景を切り抜き、大きさをそろえて `public/chars/` に入れる
+4. 開発担当に「置いた」と伝える → `python tools/art/process.py <タイプID>` で背景を切り抜き、`public/chars/<ID>.webp`（画面用）と `art/png/<ID>.png`（OGP 画像の材料）を作る
+   - 明るい色の小物（岩など）が透けてしまうときは、`tools/art/process.py` の `LIGHT_MIN_BY_ID` にそのキャラを足す
 
 ### うまく作るコツ
 - 最初の1体（絵柄の OK が出たもの）ができたら、2体目からはその画像を添付して「Same art style as the attached image.」を先頭に付けると、絵柄がそろいやすい

@@ -96,7 +96,7 @@ export function validateData(d: DataSet): string[] {
       // 公開中のキャラの相性は、公開中のキャラにする（未公開のキャラを結果画面に出さない）
       else if (c.released && !releasedIds.includes(c[k])) err(`characters: "${c.id}" ${k} "${c[k]}" is not released`);
     }
-    if (c.image !== `chars/${c.id}.svg`) err(`characters: "${c.id}" image must be chars/${c.id}.svg`);
+    if (c.image !== `chars/${c.id}.webp`) err(`characters: "${c.id}" image must be chars/${c.id}.webp`);
     if (c.og !== `og/${c.id}.png`) err(`characters: "${c.id}" og must be og/${c.id}.png`);
   }
 
