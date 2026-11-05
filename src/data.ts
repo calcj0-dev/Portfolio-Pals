@@ -47,8 +47,11 @@ export const inputRules: InputRules = {
   step: config.sliderStep,
 };
 
-/** 図鑑の順（隠しキャラは今は扱わない） */
-export const zukanCharacters: CharacterDef[] = [...characters].sort((a, b) => a.zukanOrder - b.zukanOrder);
+/** 公開中のキャラ（判定・図鑑・「〇体中」に使う）。未公開のキャラはデータだけ残す */
+export const releasedCharacters: CharacterDef[] = characters.filter((c) => c.released);
+
+/** 図鑑の順（公開中のキャラだけ） */
+export const zukanCharacters: CharacterDef[] = [...releasedCharacters].sort((a, b) => a.zukanOrder - b.zukanOrder);
 
 export function characterById(id: string): CharacterDef | undefined {
   return characters.find((c) => c.id === id);

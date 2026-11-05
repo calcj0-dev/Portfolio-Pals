@@ -93,13 +93,13 @@ describe('T-08 入力の決まり', () => {
 });
 
 describe('T-09 プリセット', () => {
-  const expected: Record<string, string> = { world100: 'monk', us70cash30: 'pioneer', cash100: 'squirrel' };
+  const expected: Record<string, string> = { world100: 'monk', us70cash30: 'pioneer', cash100: 'otter' };
 
   it('3つある', () => {
     expect(config.presets.map((p) => p.id)).toEqual(Object.keys(expected));
   });
 
-  it.each(config.presets.map((p) => [p.id, p] as const))('%s が診断仕様 2.4 のキャラになる', (id, p) => {
+  it.each(config.presets.map((p) => [p.id, p] as const))('%s が決まったキャラになる（公開時の10体の判定）', (id, p) => {
     const s = fromValues(p.values, r);
     expect(total(s)).toBe(100);
     expect(judge(toPortfolio(s, r), rules, categoryIds)).toBe(expected[id]);

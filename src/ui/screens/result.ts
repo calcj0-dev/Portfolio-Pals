@@ -5,7 +5,7 @@
 import { track } from '../../analytics';
 import { sfx } from '../../audio';
 import { toPortfolio } from '../../core/portfolio';
-import { characterById, characters, config, inputRules } from '../../data';
+import { characterById, config, inputRules, releasedCharacters } from '../../data';
 import { charText, t } from '../../i18n';
 import { postText } from '../../share/postText';
 import { openXIntent } from '../../share/share';
@@ -73,7 +73,10 @@ export const resultScreen: ScreenFactory = (app) => {
   const newFound = session.newFound
     ? h('p', {
         className: 'new-found',
-        text: t('result.newFound', { total: characters.length, count: foundIds().filter((id) => characterById(id)).length }),
+        text: t('result.newFound', {
+          total: releasedCharacters.length,
+          count: foundIds().filter((id) => characterById(id)?.released).length,
+        }),
       })
     : null;
 

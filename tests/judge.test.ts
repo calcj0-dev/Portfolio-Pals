@@ -2,7 +2,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { judge } from '../src/core/judge';
-import { categoryIds, characters, rules } from '../src/data';
+import { categoryIds, releasedCharacters, rules } from '../src/data';
 import { judge as refJudge } from '../sim/judge.mjs';
 import { samples } from '../sim/sample.mjs';
 
@@ -38,11 +38,11 @@ describe('T-01 参照実装と一致', () => {
 });
 
 describe('T-02 判定の漏れ', () => {
-  it('10%刻み・12区分の全組み合わせ（352,716通り）で、どれかのキャラに決まる', () => {
+  it('10%刻み・12区分の全組み合わせ（352,716通り）で、どれかの公開中のキャラに決まる', () => {
     const ids = categoryIds;
     const p: P = Object.fromEntries(ids.map((id) => [id, 0]));
     let count = 0;
-    const known = new Set(characters.map((c) => c.id));
+    const known = new Set(releasedCharacters.map((c) => c.id));
     const unknown: string[] = [];
     const walk = (i: number, rest: number) => {
       const id = ids[i]!;
@@ -84,8 +84,8 @@ describe('T-04 全キャラに出る入力がある', () => {
       return [idByName.get(c[1]!)!, input] as const;
     });
 
-  it('22キャラすべての例がある', () => {
-    expect(new Set(rows.map(([id]) => id))).toEqual(new Set(characters.map((c) => c.id)));
+  it('公開中のキャラすべての例がある', () => {
+    expect(new Set(rows.map(([id]) => id))).toEqual(new Set(releasedCharacters.map((c) => c.id)));
   });
 
   it.each(rows)('%s', (id, input) => {

@@ -13,8 +13,8 @@ export type CharacterDef = {
   bad: string;
   image: string;
   og: string;
-  /** 隠しキャラ（公開後に使う。技術設計 9.3） */
-  hidden?: boolean;
+  /** 公開中か。false のキャラはデータだけ残し、判定・図鑑に出さない（アップデートで戻す） */
+  released: boolean;
 };
 export type CharacterText = {
   name: string;
@@ -85,11 +85,16 @@ export function validateData(d: DataSet): string[] {
   for (const x of duplicates(orders)) err(`characters: duplicate zukanOrder ${x}`);
   const sorted = [...orders].sort((a, b) => a - b);
   if (sorted.some((o, i) => o !== i + 1)) err(`characters: zukanOrder must be 1..${orders.length}`);
+  const releasedIds = d.characters.filter((c) => c.released).map((c) => c.id);
+  if (releasedIds.length === 0) err('characters: no released character');
   for (const c of d.characters) {
+    if (typeof c.released !== 'boolean') err(`characters: "${c.id}" released must be true or false`);
     if (!d.config.zukanGroups.includes(c.zukanGroup)) err(`characters: "${c.id}" has unknown zukanGroup "${c.zukanGroup}"`);
     for (const k of ['good', 'bad'] as const) {
       if (c[k] === c.id) err(`characters: "${c.id}" ${k} is itself`);
       else if (!charIds.includes(c[k])) err(`characters: "${c.id}" ${k} "${c[k]}" is unknown`);
+      // 公開中のキャラの相性は、公開中のキャラにする（未公開のキャラを結果画面に出さない）
+      else if (c.released && !releasedIds.includes(c[k])) err(`characters: "${c.id}" ${k} "${c[k]}" is not released`);
     }
     if (c.image !== `chars/${c.id}.svg`) err(`characters: "${c.id}" image must be chars/${c.id}.svg`);
     if (c.og !== `og/${c.id}.png`) err(`characters: "${c.id}" og must be og/${c.id}.png`);
@@ -102,6 +107,7 @@ export function validateData(d: DataSet): string[] {
   for (const x of duplicates(ruleIds)) err(`rules: duplicate id "${x}"`);
   rules.forEach((r, i) => {
     if (!charIds.includes(r.id)) err(`rules: "${r.id}" is not in characters`);
+    else if (!releasedIds.includes(r.id)) err(`rules: "${r.id}" is not released`);
     const last = i === rules.length - 1;
     if (last && r.all.length !== 0) err(`rules: last rule "${r.id}" must have empty "all"`);
     if (!last && r.all.length === 0) err(`rules: "${r.id}" has empty "all" but is not last`);
@@ -116,7 +122,7 @@ export function validateData(d: DataSet): string[] {
     }
   });
   if (rules.length === 0) err('rules: empty');
-  for (const c of d.characters) if (!c.hidden && !ruleIds.includes(c.id)) err(`characters: "${c.id}" has no rule`);
+  for (const id of releasedIds) if (!ruleIds.includes(id)) err(`characters: "${id}" has no rule`);
 
   // ---- プリセット ----
   for (const p of d.config.presets) {

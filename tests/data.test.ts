@@ -1,7 +1,7 @@
 // データの検査（T-06・T-07。絵の有無は #9 で足す）
 import { describe, expect, it } from 'vitest';
 import { validateData, type DataSet } from '../src/core/validate';
-import { characters, dataSet } from '../src/data';
+import { characters, dataSet, releasedCharacters } from '../src/data';
 
 /** 正しいデータを複製して、一か所だけ壊す */
 function broken(edit: (d: DataSet) => void): string[] {
@@ -15,8 +15,9 @@ describe('今のデータ', () => {
     expect(validateData(dataSet)).toEqual([]);
   });
 
-  it('キャラは22種', () => {
+  it('キャラは22種（データ）。公開中は10体', () => {
     expect(characters).toHaveLength(22);
+    expect(releasedCharacters).toHaveLength(10);
   });
 });
 
@@ -41,7 +42,10 @@ describe('T-07 キャラのデータの検査', () => {
     ['相性が自分', (d) => (d.characters[0]!.good = d.characters[0]!.id)],
     ['相性が知らないID', (d) => (d.characters[0]!.bad = 'ghost')],
     ['知らない図鑑のグループ', (d) => (d.characters[0]!.zukanGroup = 'ghost')],
-    ['判定のないキャラ', (d) => (d.rules.rules = d.rules.rules.filter((r) => r.id !== 'monk'))],
+    ['判定のない公開中のキャラ', (d) => (d.rules.rules = d.rules.rules.filter((r) => r.id !== 'monk'))],
+    ['未公開のキャラの判定がある', (d) => d.rules.rules.unshift({ id: 'dragon', all: [['gold', 'gte', 30]] })],
+    ['公開中のキャラの相性が未公開のキャラ', (d) => (d.characters.find((c) => c.id === 'monk')!.good = 'dragon')],
+    ['released が真偽値でない', (d) => ((d.characters[0] as { released: unknown }).released = 'yes')],
     ['文章がない', (d) => delete d.locales.ja!.characters.monk],
     ['性格が2つ', (d) => d.locales.ja!.characters.monk!.traits.pop()],
     ['あるあるが4つ', (d) => d.locales.ja!.characters.monk!.aruaru.push('x')],

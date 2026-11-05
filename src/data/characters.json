@@ -3,6 +3,7 @@
   "characters": [
     {
       "id": "monk",
+      "released": true,
       "zukanGroup": "fund",
       "zukanOrder": 1,
       "good": "craftsman",
@@ -12,6 +13,7 @@
     },
     {
       "id": "dreamer",
+      "released": false,
       "zukanGroup": "fund",
       "zukanOrder": 2,
       "good": "pioneer",
@@ -21,24 +23,27 @@
     },
     {
       "id": "pioneer",
+      "released": true,
       "zukanGroup": "fund",
       "zukanOrder": 3,
-      "good": "dreamer",
+      "good": "tech",
       "bad": "mediator",
       "image": "chars/pioneer.svg",
       "og": "og/pioneer.png"
     },
     {
       "id": "mediator",
+      "released": true,
       "zukanGroup": "fund",
       "zukanOrder": 4,
-      "good": "four_kings",
+      "good": "owl",
       "bad": "pioneer",
       "image": "chars/mediator.svg",
       "og": "og/mediator.png"
     },
     {
       "id": "samurai",
+      "released": false,
       "zukanGroup": "fund",
       "zukanOrder": 5,
       "good": "mekiki",
@@ -48,6 +53,7 @@
     },
     {
       "id": "explorer",
+      "released": false,
       "zukanGroup": "fund",
       "zukanOrder": 6,
       "good": "alchemist",
@@ -57,33 +63,37 @@
     },
     {
       "id": "craftsman",
+      "released": true,
       "zukanGroup": "fund",
       "zukanOrder": 7,
       "good": "monk",
-      "bad": "alchemist",
+      "bad": "otter",
       "image": "chars/craftsman.svg",
       "og": "og/craftsman.png"
     },
     {
       "id": "mekiki",
+      "released": true,
       "zukanGroup": "stock",
       "zukanOrder": 8,
-      "good": "samurai",
-      "bad": "dreamer",
+      "good": "tech",
+      "bad": "pioneer",
       "image": "chars/mekiki.svg",
       "og": "og/mekiki.png"
     },
     {
       "id": "tech",
+      "released": true,
       "zukanGroup": "stock",
       "zukanOrder": 9,
       "good": "rocket_cat",
-      "bad": "samurai",
+      "bad": "monk",
       "image": "chars/tech.svg",
       "og": "og/tech.png"
     },
     {
       "id": "oshi",
+      "released": false,
       "zukanGroup": "stock",
       "zukanOrder": 10,
       "good": "mekiki",
@@ -93,6 +103,7 @@
     },
     {
       "id": "boar",
+      "released": false,
       "zukanGroup": "stock",
       "zukanOrder": 11,
       "good": "warrior",
@@ -102,6 +113,7 @@
     },
     {
       "id": "warrior",
+      "released": false,
       "zukanGroup": "stock",
       "zukanOrder": 12,
       "good": "boar",
@@ -111,6 +123,7 @@
     },
     {
       "id": "dragon",
+      "released": false,
       "zukanGroup": "other",
       "zukanOrder": 13,
       "good": "koala",
@@ -120,6 +133,7 @@
     },
     {
       "id": "koala",
+      "released": false,
       "zukanGroup": "other",
       "zukanOrder": 14,
       "good": "squirrel",
@@ -129,15 +143,17 @@
     },
     {
       "id": "rocket_cat",
+      "released": true,
       "zukanGroup": "other",
       "zukanOrder": 15,
       "good": "tech",
-      "bad": "squirrel",
+      "bad": "otter",
       "image": "chars/rocket_cat.svg",
       "og": "og/rocket_cat.png"
     },
     {
       "id": "alchemist",
+      "released": false,
       "zukanGroup": "other",
       "zukanOrder": 16,
       "good": "explorer",
@@ -147,6 +163,7 @@
     },
     {
       "id": "owl",
+      "released": true,
       "zukanGroup": "other",
       "zukanOrder": 17,
       "good": "otter",
@@ -156,6 +173,7 @@
     },
     {
       "id": "squirrel",
+      "released": false,
       "zukanGroup": "cash",
       "zukanOrder": 18,
       "good": "koala",
@@ -165,15 +183,17 @@
     },
     {
       "id": "otter",
+      "released": true,
       "zukanGroup": "cash",
       "zukanOrder": 19,
       "good": "owl",
-      "bad": "warrior",
+      "bad": "rocket_cat",
       "image": "chars/otter.svg",
       "og": "og/otter.png"
     },
     {
       "id": "four_kings",
+      "released": false,
       "zukanGroup": "special",
       "zukanOrder": 20,
       "good": "mediator",
@@ -183,6 +203,7 @@
     },
     {
       "id": "octopus",
+      "released": false,
       "zukanGroup": "special",
       "zukanOrder": 21,
       "good": "sheep",
@@ -192,10 +213,11 @@
     },
     {
       "id": "sheep",
+      "released": true,
       "zukanGroup": "special",
       "zukanOrder": 22,
-      "good": "octopus",
-      "bad": "four_kings",
+      "good": "owl",
+      "bad": "craftsman",
       "image": "chars/sheep.svg",
       "og": "og/sheep.png"
     }

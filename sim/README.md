@@ -15,3 +15,4 @@
 
 ## このリポジトリでの変更
 - 2026-10-30：キャラの修正に合わせ、`turtle` を `koala`（石橋を叩くコアラ）、`yutai` を `mekiki`（日本株の目利き）に直した（rules.json・names.json と結果の .md の名前）。判定の条件は変えていないので、結果の数字は同じ
+- 2026-11-05：公開時の10体用に rules.json を v2 に組み直した（案A。カワウソは個別株・暗号資産のキャラのあと）。names.json の名前を新しいキャラ名にし、dist・examples・enumerate_all の .md を作り直した。外した12体は rules.json にない（データは src/data に残す）
