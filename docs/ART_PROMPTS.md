@@ -22,12 +22,12 @@ Simple Japanese kawaii chibi character illustration. Hand-drawn look with thin, 
 
 ## キャラごとの指示
 
-### monk（悟りを開いた僧侶）
+### monk（悟りを開いたカピバラ）
 ```
 The character: a small capybara monk. Boxy rounded head, very small ears, a wide flat dark nose, light tan fur. Wearing an orange Buddhist robe draped over one shoulder. Paws pressed together in front of the chest as if praying. Calm, peaceful, content smile.
 ```
 
-### craftsman（王道インデックス職人）
+### craftsman（王道インデックスのビーバー）
 ```
 The character: a small beaver craftsman. Round head, small round ears, two little white front teeth, light brown fur with a cream belly, a flat paddle-shaped tail. Wearing a white twisted headband tied at the side of the head. Holding a small wooden log in both paws. Proud, cheerful smile.
 ```
