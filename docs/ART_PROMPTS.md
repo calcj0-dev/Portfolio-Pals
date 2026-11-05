@@ -5,7 +5,7 @@
 
 ## 手順
 1. 下の「共通の指示」と「キャラごとの指示」をつなげて入れる（英語のまま貼るのがおすすめ）
-   - ChatGPT のときは、最後に `Transparent background, PNG.` を足す（背景が透明の PNG で出せる）
+   - ChatGPT のときは、共通の指示の `Plain pure white background` を `Transparent background (PNG)` に置き換える（背景が透明の PNG で出せる）
 2. 何枚か作り、気に入った1枚を、できるだけ大きいサイズで保存する
 3. `art/raw/<タイプID>.png`（または .jpg）として置く。例：`art/raw/monk.png`
 4. 開発担当に「置いた」と伝える → 背景を切り抜き、大きさをそろえて `public/chars/` に入れる
