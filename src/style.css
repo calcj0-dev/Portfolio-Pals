@@ -170,7 +170,37 @@ button {
 
 /* ---- S1 タイトル ---- */
 .title-art {
-  min-height: 160px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 8px;
+  max-width: 330px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 下の段を少し上に詰め、ふわふわ動かす（動きを減らす設定では止める） */
+.title-char {
+  animation: title-float 3s ease-in-out infinite;
+}
+
+.title-char:nth-child(2n) {
+  animation-delay: -1.5s;
+}
+
+.title-char:nth-child(n + 4) {
+  translate: 0 -8px;
+}
+
+@keyframes title-float {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-char {
+    animation: none;
+  }
 }
 
 .title-main {

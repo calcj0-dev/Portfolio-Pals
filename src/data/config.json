@@ -11,6 +11,7 @@
   "revealStepMs": 200,
   "categoryGroups": ["fund", "stock", "other", "cash"],
   "zukanGroups": ["fund", "stock", "other", "cash", "special"],
+  "titleCharacters": ["owl", "otter", "pioneer", "monk", "craftsman", "sheep"],
   "hashtag": "#投資キャラ診断",
   "xPost": { "maxWeight": 280, "urlWeight": 23 },
   "links": {

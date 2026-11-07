@@ -47,6 +47,8 @@ export type DataSet = {
     presets: PresetDef[];
     categoryGroups: string[];
     zukanGroups: string[];
+    /** タイトル画面に並べるキャラ（公開中のキャラ） */
+    titleCharacters: string[];
   };
   categories: CategoryDef[];
   rules: RawRules;
@@ -98,6 +100,11 @@ export function validateData(d: DataSet): string[] {
     }
     if (c.image !== `chars/${c.id}.webp`) err(`characters: "${c.id}" image must be chars/${c.id}.webp`);
     if (c.og !== `og/${c.id}.png`) err(`characters: "${c.id}" og must be og/${c.id}.png`);
+  }
+
+  for (const x of duplicates(d.config.titleCharacters)) err(`config: titleCharacters has duplicate "${x}"`);
+  for (const id of d.config.titleCharacters) {
+    if (!releasedIds.includes(id)) err(`config: titleCharacters "${id}" is not a released character`);
   }
 
   // ---- 判定表 ----

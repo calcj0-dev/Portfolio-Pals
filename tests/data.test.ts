@@ -50,6 +50,8 @@ describe('T-07 キャラのデータの検査', () => {
     ['判定のない公開中のキャラ', (d) => (d.rules.rules = d.rules.rules.filter((r) => r.id !== 'monk'))],
     ['未公開のキャラの判定がある', (d) => d.rules.rules.unshift({ id: 'dragon', all: [['gold', 'gte', 30]] })],
     ['公開中のキャラの相性が未公開のキャラ', (d) => (d.characters.find((c) => c.id === 'monk')!.good = 'dragon')],
+    ['タイトルのキャラが未公開', (d) => d.config.titleCharacters.push('dragon')],
+    ['タイトルのキャラの重複', (d) => d.config.titleCharacters.push(d.config.titleCharacters[0]!)],
     ['released が真偽値でない', (d) => ((d.characters[0] as { released: unknown }).released = 'yes')],
     ['文章がない', (d) => delete d.locales.ja!.characters.monk],
     ['性格が2つ', (d) => d.locales.ja!.characters.monk!.traits.pop()],
