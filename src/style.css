@@ -437,6 +437,12 @@ button {
   font-size: 18px;
 }
 
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .modal-actions {
   display: flex;
   flex-direction: column;

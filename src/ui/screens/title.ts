@@ -1,4 +1,4 @@
-// S1 タイトル（画面設計 4章）。プライバシーはあとで足す
+// S1 タイトル（画面設計 4章）
 
 import { foundBucket, track } from '../../analytics';
 import { config, releasedCharacters } from '../../data';
@@ -39,6 +39,7 @@ export const titleScreen: ScreenFactory = (app) => {
     ),
     h('p', { className: 'small', text: t('title.safe') }),
     externalLink(t('title.credit'), config.links.follow),
+    button(t('title.privacy'), () => app.openModal('privacy'), 'link'),
   ]);
   return { el, unmount: sound.dispose };
 };

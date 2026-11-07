@@ -1,14 +1,14 @@
-// 重ね表示（画面設計 1章）。M1 結果画像のプレビュー、M2 迷いやすいものの入れ方。M3 はあとで足す
+// 重ね表示（画面設計 1章）。M1 結果画像のプレビュー、M2 迷いやすいものの入れ方、M3 プライバシーについて
 
-import { track } from '../analytics';
+import { gaId, track } from '../analytics';
 import { toPortfolio } from '../core/portfolio';
-import { inputRules } from '../data';
+import { config, inputRules } from '../data';
 import { localeData, t } from '../i18n';
 import { postText } from '../share/postText';
 import { resultImage } from '../share/resultImage';
 import { openXIntent, preferWebShare, saveImage, shareWithImage, toDataUrl } from '../share/share';
 import type { ModalFactory, ModalName } from './app';
-import { button, h } from './dom';
+import { button, externalLink, h } from './dom';
 import { session } from './session';
 
 const panel = (heading: string, body: (HTMLElement | null)[], footer: HTMLElement[]) =>
@@ -98,4 +98,31 @@ const image: ModalFactory = (app) => {
   );
 };
 
-export const modals: Record<ModalName, ModalFactory> = { help, image };
+/** M3 プライバシーについて（技術設計 7.3）。GA4 を入れているか（測定IDがあるか）で文言を切り替える */
+const privacy: ModalFactory = (app) => {
+  const p = (text: string) => h('p', { text });
+  const link = (text: string, href: string) => h('p', {}, [externalLink(text, href)]);
+  const body = gaId()
+    ? [
+        p(t('privacy.ga.p1')),
+        p(t('privacy.ga.p2')),
+        p(t('privacy.ga.p3')),
+        p(t('privacy.image')),
+        p(t('privacy.storage')),
+        p(t('privacy.ga.optout')),
+        link(t('privacy.googlePolicy'), config.links.googlePrivacy),
+        link(t('privacy.optoutLink'), config.links.gaOptout),
+        link(t('privacy.vercelPolicy'), config.links.vercelPrivacy),
+      ]
+    : [
+        p(t('privacy.basic.p1')),
+        p(t('privacy.basic.p2')),
+        p(t('privacy.basic.p3')),
+        p(t('privacy.image')),
+        p(t('privacy.storage')),
+        link(t('privacy.vercelPolicy'), config.links.vercelPrivacy),
+      ];
+  return panel(t('privacy.heading'), body, [button(t('common.close'), () => app.closeModal(), 'btn')]);
+};
+
+export const modals: Record<ModalName, ModalFactory> = { help, image, privacy };

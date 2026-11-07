@@ -1,6 +1,5 @@
 // S4 結果（画面設計 7章、診断仕様 5章）。
 // 絵がぽよんと出る → タイプ名 → 一言 の順に少しずつ出す（タップで飛ばす）。
-// プライバシーへの導線は #15 で足す
 
 import { foundBucket, track } from '../../analytics';
 import { sfx } from '../../audio';
@@ -125,6 +124,7 @@ export const resultScreen: ScreenFactory = (app) => {
       outLink(t('result.tvaButton'), config.links.tva, 'tva', type, 'btn btn-secondary'),
     ]),
     outLink(t('result.follow'), config.links.follow, 'follow', type, 'link'),
+    button(t('title.privacy'), () => app.openModal('privacy'), 'link'),
   ]);
 
   sfx.reveal();

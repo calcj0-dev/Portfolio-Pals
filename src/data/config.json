@@ -18,6 +18,9 @@
     "tameru": "https://tameru-lovat.vercel.app/?utm_source=bakage&utm_medium=game&utm_campaign=baka017",
     "tva": "https://trader-vs-autopilot.vercel.app/?utm_source=bakage&utm_medium=game&utm_campaign=baka017",
     "follow": "https://x.com/shooojp19",
-    "xIntent": "https://x.com/intent/post"
+    "xIntent": "https://x.com/intent/post",
+    "googlePrivacy": "https://policies.google.com/privacy",
+    "vercelPrivacy": "https://vercel.com/legal/privacy-policy",
+    "gaOptout": "https://tools.google.com/dlpage/gaoptout"
   }
 }

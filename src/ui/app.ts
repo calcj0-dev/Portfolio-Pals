@@ -2,7 +2,7 @@
 // ブラウザの「戻る」に対応するため、画面ごとに history を1つ積む
 
 export type ScreenName = 'title' | 'input' | 'diagnosing' | 'result' | 'zukan' | 'detail' | 'shared';
-export type ModalName = 'help' | 'image';
+export type ModalName = 'help' | 'image' | 'privacy';
 
 export type GoOptions = {
   /** 今の履歴を置き換える（演出→結果のように「戻る」で戻したくないとき） */

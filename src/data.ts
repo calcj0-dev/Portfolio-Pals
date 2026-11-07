@@ -20,7 +20,15 @@ export type AppConfig = DataSet['config'] & {
   hashtag: string;
   /** X の投稿の上限（全角を2、URLを urlWeight で数える。T-11） */
   xPost: { maxWeight: number; urlWeight: number };
-  links: { tameru: string; tva: string; follow: string; xIntent: string };
+  links: {
+    tameru: string;
+    tva: string;
+    follow: string;
+    xIntent: string;
+    googlePrivacy: string;
+    vercelPrivacy: string;
+    gaOptout: string;
+  };
 };
 
 export const config: AppConfig = configJson satisfies AppConfig;

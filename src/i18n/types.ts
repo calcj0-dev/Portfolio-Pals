@@ -17,6 +17,7 @@ export const MESSAGE_KEYS = [
   'title.safe',
   'title.credit',
   'title.zukan',
+  'title.privacy',
 
   'input.help',
   'input.step1',
@@ -65,6 +66,20 @@ export const MESSAGE_KEYS = [
   'image.shareWithImage',
   'image.save',
   'image.longPress',
+
+  'privacy.heading',
+  'privacy.ga.p1',
+  'privacy.ga.p2',
+  'privacy.ga.p3',
+  'privacy.ga.optout',
+  'privacy.basic.p1',
+  'privacy.basic.p2',
+  'privacy.basic.p3',
+  'privacy.image',
+  'privacy.storage',
+  'privacy.googlePolicy',
+  'privacy.optoutLink',
+  'privacy.vercelPolicy',
 
   'zukan.heading',
   'zukan.count',
