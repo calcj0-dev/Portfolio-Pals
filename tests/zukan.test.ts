@@ -1,4 +1,4 @@
-// T-10 発見の記録（シェアURLで見ただけでは保存されないことは #11 で足す）
+// T-10 発見の記録（シェアURLで見ただけでは保存されないことは shared.test.ts）
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { foundCount, foundIds, hasDiagnosed, isFound, markDiagnosed, markFound } from '../src/zukan';
 

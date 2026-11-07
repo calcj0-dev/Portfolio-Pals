@@ -605,6 +605,19 @@ button {
   color: var(--text-sub);
 }
 
+/* ---- S7 シェアURL ---- */
+.shared-app {
+  padding-top: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-sub);
+  text-align: center;
+}
+
+.shared-lead {
+  text-align: center;
+}
+
 /* ---- S4 結果 ---- */
 .result-lead {
   font-weight: 700;

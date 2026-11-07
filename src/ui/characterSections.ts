@@ -34,17 +34,19 @@ function compatRow(app: App, mark: string, otherId: string, why: string): HTMLEl
   return h('button', { className: 'compat compat-open', attrs: { type: 'button' }, on: { click: () => openDetail(app, otherId) } }, children);
 }
 
-/** 性格・あるある・相性・格言 */
-export function characterSections(app: App, type: string): HTMLElement[] {
+/** 性格・あるある・相性・格言。シェアURLの画面（S7）では相性を出さない */
+export function characterSections(app: App, type: string, opts: { compat?: boolean } = {}): HTMLElement[] {
   const def = characterById(type)!;
   const c = charText(type);
   return [
     section(t('result.traits'), [list(c.traits)]),
     section(t('result.aruaru'), [list(c.aruaru)]),
-    section(t('result.compat'), [
-      compatRow(app, t('result.goodMark'), def.good, c.goodWhy),
-      compatRow(app, t('result.badMark'), def.bad, c.badWhy),
-    ]),
+    opts.compat === false
+      ? null
+      : section(t('result.compat'), [
+          compatRow(app, t('result.goodMark'), def.good, c.goodWhy),
+          compatRow(app, t('result.badMark'), def.bad, c.badWhy),
+        ]),
     section(t('result.proverb'), [h('p', { className: 'proverb', text: t('common.quote', { text: c.proverb }) })]),
-  ];
+  ].filter((x): x is HTMLElement => x !== null);
 }

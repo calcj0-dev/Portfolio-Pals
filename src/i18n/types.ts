@@ -13,7 +13,6 @@ export const MESSAGE_KEYS = [
 
   'title.main',
   'title.sub',
-  'title.preparing',
   'title.start',
   'title.safe',
   'title.credit',
@@ -64,6 +63,9 @@ export const MESSAGE_KEYS = [
   'zukan.complete',
 
   'detail.backToZukan',
+
+  'shared.lead',
+  'shared.start',
 
   'share.post',
 ] as const;

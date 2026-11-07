@@ -3,7 +3,6 @@
     "common.disclaimer": "本作はジョークの診断であり、投資助言ではありません。",
     "title.main": "投資キャラ診断",
     "title.sub": "資産構成を入れるだけ。",
-    "title.preparing": "ただいま準備中です",
     "common.back": "もどる",
     "common.close": "閉じる",
     "common.soundOn": "効果音：オン",
@@ -51,6 +50,8 @@
     "zukan.count": "{total}体中 {count}体を発見",
     "zukan.complete": "{total}体 コンプリート！",
     "detail.backToZukan": "図鑑にもどる",
+    "shared.lead": "このキャラの人がシェアしました",
+    "shared.start": "あなたも診断する",
     "share.post": "投資キャラ診断の結果、「{name}」でした。「{one}」 {hashtag}"
   },
   "categories": {
