@@ -1,6 +1,6 @@
 // S4 結果（画面設計 7章、診断仕様 5章）。
 // 絵がぽよんと出る → タイプ名 → 一言 の順に少しずつ出す（タップで飛ばす）。
-// 結果画像・プライバシーへの導線はそれぞれの作業で足す
+// プライバシーへの導線は #15 で足す
 
 import { foundBucket, track } from '../../analytics';
 import { sfx } from '../../audio';
@@ -77,6 +77,7 @@ export const resultScreen: ScreenFactory = (app) => {
       'btn btn-primary btn-big',
     ),
     h('div', { className: 'result-links' }, [
+      button(t('result.image'), () => app.openModal('image'), 'link'),
       button(
         t('result.retry'),
         () => {

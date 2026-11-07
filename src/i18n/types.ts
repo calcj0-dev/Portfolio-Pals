@@ -57,6 +57,14 @@ export const MESSAGE_KEYS = [
   'result.tvaButton',
   'result.follow',
   'result.zukan',
+  'result.image',
+
+  'image.heading',
+  'image.alt',
+  'image.pie',
+  'image.shareWithImage',
+  'image.save',
+  'image.longPress',
 
   'zukan.heading',
   'zukan.count',
