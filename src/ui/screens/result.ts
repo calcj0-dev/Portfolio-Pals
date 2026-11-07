@@ -8,7 +8,8 @@ import { toPortfolio } from '../../core/portfolio';
 import { characterById, config, inputRules, releasedCharacters } from '../../data';
 import { charText, t } from '../../i18n';
 import { postText } from '../../share/postText';
-import { openXIntent } from '../../share/share';
+import { resultImage } from '../../share/resultImage';
+import { openXIntent, preferWebShare, shareWithImage } from '../../share/share';
 import { foundCount } from '../../zukan';
 import type { ScreenFactory } from '../app';
 import { button, externalLink, h } from '../dom';
@@ -64,18 +65,31 @@ export const resultScreen: ScreenFactory = (app) => {
       })
     : null;
 
+  // 「Xでシェア」：スマホは画像つきの共有画面、パソコンは X の投稿画面（技術設計 6.3）。
+  // 共有画面は押した直後に呼ばないと断られるので、画像は画面を開いたときに作っておく（円グラフなし）
+  const portfolio = toPortfolio(session.input, inputRules);
+  let shareBlob: Blob | null = null;
+  void resultImage(type, portfolio, false).then((b) => {
+    shareBlob = b;
+  });
+  const share = () => {
+    const text = postText(type);
+    if (shareBlob && preferWebShare(shareBlob)) {
+      track('share_click', { method: 'web_share', pie: 'off', type });
+      void shareWithImage(text, type, shareBlob).then((r) => {
+        if (r === 'failed') openXIntent(text, type);
+      });
+      return;
+    }
+    track('share_click', { method: 'x_intent', pie: 'off', type });
+    openXIntent(text, type);
+  };
+
   const el = h('main', { className: 'screen screen-result' }, [
     h('div', { className: 'top-bar top-bar-split' }, [h('p', { className: 'result-lead', text: t('result.heading') }), sound.el]),
     hero,
     newFound,
-    button(
-      t('result.share'),
-      () => {
-        track('share_click', { method: 'x_intent', pie: 'off', type });
-        openXIntent(postText(type), type);
-      },
-      'btn btn-primary btn-big',
-    ),
+    button(t('result.share'), share, 'btn btn-primary btn-big'),
     h('div', { className: 'result-links' }, [
       button(t('result.image'), () => app.openModal('image'), 'link'),
       button(
@@ -98,7 +112,7 @@ export const resultScreen: ScreenFactory = (app) => {
     ]),
     h('div', { className: 'card result-body' }, [
       ...characterSections(app, type),
-      section(t('result.pie'), [createPie(toPortfolio(session.input, inputRules), 140).el]),
+      section(t('result.pie'), [createPie(portfolio, 140).el]),
       h('p', { className: 'small', text: t('common.disclaimer') }),
     ]),
     h('section', { className: 'card promo' }, [

@@ -25,13 +25,21 @@ export function openXIntent(text: string, typeId: string): void {
   window.open(`${config.links.xIntent}?${q}`, '_blank', 'noopener');
 }
 
-/** Web Share（画像＋投稿文＋URL）。共有先は利用者が選ぶ。中止したときは false */
-export async function shareWithImage(text: string, typeId: string, blob: Blob): Promise<boolean> {
+/** スマホで、画像つきの共有画面を出せるか（パソコンは X の投稿画面にする。技術設計 6.3） */
+export function preferWebShare(blob: Blob | null): boolean {
+  return matchMedia('(pointer: coarse)').matches && canShareImage(blob);
+}
+
+/**
+ * Web Share（画像＋投稿文＋URL）。共有先は利用者が選ぶ。
+ * 利用者が閉じたときは 'cancelled'、共有できなかったときは 'failed'
+ */
+export async function shareWithImage(text: string, typeId: string, blob: Blob): Promise<'shared' | 'cancelled' | 'failed'> {
   try {
     await navigator.share({ files: [imageFile(blob)], text: `${text} ${shareUrl(typeId)}` });
-    return true;
-  } catch {
-    return false;
+    return 'shared';
+  } catch (e) {
+    return e instanceof DOMException && e.name === 'AbortError' ? 'cancelled' : 'failed';
   }
 }
 
@@ -41,7 +49,7 @@ export async function shareWithImage(text: string, typeId: string, blob: Blob): 
  * 共有シートが使えなければダウンロード。どれもだめなら M1 の画像を長押しで保存してもらう
  */
 export async function saveImage(blob: Blob): Promise<void> {
-  if (matchMedia('(pointer: coarse)').matches && canShareImage(blob)) {
+  if (preferWebShare(blob)) {
     try {
       await navigator.share({ files: [imageFile(blob)] });
       return;

@@ -2,7 +2,7 @@
 import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { validateData, type DataSet } from '../src/core/validate';
-import { characters, dataSet, releasedCharacters } from '../src/data';
+import { characters, config, dataSet, releasedCharacters } from '../src/data';
 
 /** 正しいデータを複製して、一か所だけ壊す */
 function broken(edit: (d: DataSet) => void): string[] {
@@ -23,6 +23,21 @@ describe('今のデータ', () => {
 
   it.each(releasedCharacters.map((c) => [c.id, c.image] as const))('公開中の %s の絵がある', (_id, image) => {
     expect(existsSync(new URL(`../public/${image}`, import.meta.url))).toBe(true);
+  });
+});
+
+describe('導線のリンク（06章 2.4）', () => {
+  it.each(['tameru', 'tva'] as const)('%s に UTM が付いている', (k) => {
+    const u = new URL(config.links[k]);
+    expect(u.protocol).toBe('https:');
+    expect(u.searchParams.get('utm_source')).toBe('bakage');
+    expect(u.searchParams.get('utm_medium')).toBe('game');
+    expect(u.searchParams.get('utm_campaign')).toBe('baka017');
+  });
+
+  it('フォローと X の投稿画面は https', () => {
+    expect(new URL(config.links.follow).protocol).toBe('https:');
+    expect(new URL(config.links.xIntent).protocol).toBe('https:');
   });
 });
 

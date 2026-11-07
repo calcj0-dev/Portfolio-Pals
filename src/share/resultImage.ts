@@ -48,7 +48,7 @@ function drawPie(ctx: CanvasRenderingContext2D, p: Portfolio, cx: number, cy: nu
   }
 }
 
-export async function renderResultImage(type: string, portfolio: Portfolio, withPie: boolean): Promise<Blob | null> {
+async function renderResultImage(type: string, portfolio: Portfolio, withPie: boolean): Promise<Blob | null> {
   const def = characterById(type);
   if (!def) return null;
   try {
@@ -142,4 +142,22 @@ export async function renderResultImage(type: string, portfolio: Portfolio, with
   ctx.fillText(t('common.disclaimer'), RIGHT, 590);
 
   return new Promise((resolve) => canvas.toBlob((b) => resolve(b), 'image/png'));
+}
+
+const cache = new Map<string, Promise<Blob | null>>();
+
+/**
+ * 結果画像。同じ結果・同じスイッチなら作り直さない（結果画面を開いたときに作り始め、シェアのときにすぐ使えるようにする）。
+ * 覚えておくのはメモリの中だけで、端末には保存しない
+ */
+export function resultImage(type: string, portfolio: Portfolio, withPie: boolean): Promise<Blob | null> {
+  const key = `${type}|${withPie}|${JSON.stringify(portfolio)}`;
+  let p = cache.get(key);
+  if (!p) {
+    p = renderResultImage(type, portfolio, withPie);
+    cache.set(key, p);
+    // 古いものから捨てる（もう一回を繰り返してもふくらまないように）
+    while (cache.size > 4) cache.delete(cache.keys().next().value!);
+  }
+  return p;
 }

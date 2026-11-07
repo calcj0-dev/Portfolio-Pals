@@ -5,8 +5,8 @@ import { toPortfolio } from '../core/portfolio';
 import { inputRules } from '../data';
 import { localeData, t } from '../i18n';
 import { postText } from '../share/postText';
-import { renderResultImage } from '../share/resultImage';
-import { canShareImage, saveImage, shareWithImage, toDataUrl } from '../share/share';
+import { resultImage } from '../share/resultImage';
+import { openXIntent, preferWebShare, saveImage, shareWithImage, toDataUrl } from '../share/share';
 import type { ModalFactory, ModalName } from './app';
 import { button, h } from './dom';
 import { session } from './session';
@@ -52,7 +52,9 @@ const image: ModalFactory = (app) => {
     () => {
       if (!blob || !type) return;
       track('share_click', { method: 'web_share', pie: pie(), type });
-      void shareWithImage(postText(type), type, blob);
+      void shareWithImage(postText(type), type, blob).then((r) => {
+        if (r === 'failed') openXIntent(postText(type), type);
+      });
     },
     'btn btn-primary',
   );
@@ -74,10 +76,10 @@ const image: ModalFactory = (app) => {
     if (!type) return;
     const mine = ++request;
     saveBtn.disabled = true;
-    void renderResultImage(type, portfolio, pieSwitch.checked).then(async (b) => {
+    void resultImage(type, portfolio, pieSwitch.checked).then(async (b) => {
       if (mine !== request || !b) return;
       blob = b;
-      shareBtn.hidden = !(matchMedia('(pointer: coarse)').matches && canShareImage(b));
+      shareBtn.hidden = !preferWebShare(b);
       saveBtn.disabled = false;
       img.src = await toDataUrl(b);
     });
