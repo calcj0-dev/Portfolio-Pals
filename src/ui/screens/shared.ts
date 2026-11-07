@@ -1,10 +1,10 @@
 // S7 シェアURLで開いたとき（画面設計 11章）。シェアした人のキャラの紹介と「あなたも診断する」。
 // 相性は出さない（相手のキャラのネタばれを減らすため）。このキャラは発見に数えない（T-10）
 
-import { foundBucket, track } from '../../analytics';
+import { track } from '../../analytics';
 import { characterById } from '../../data';
 import { charText, t } from '../../i18n';
-import { foundCount } from '../../zukan';
+import { foundBucketNow } from '../../zukan';
 import type { ScreenFactory } from '../app';
 import { button, h } from '../dom';
 import { characterArt } from '../character';
@@ -40,7 +40,7 @@ export const sharedScreen: ScreenFactory = (app) => {
       button(
         t('result.zukan'),
         () => {
-          track('zukan_open', { from: 'shared', found: foundBucket(foundCount()) });
+          track('zukan_open', { from: 'shared', found: foundBucketNow() });
           app.go('zukan');
         },
         'link',

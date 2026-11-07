@@ -1,6 +1,7 @@
 // 発見の記録（診断仕様 6章、技術設計 10章）。自分の入力で出たキャラだけを端末に保存する。
 // シェアURLで見たキャラは数えない。保存できない環境でも動く（T-10）
 
+import { foundBucket, type FoundBucket } from './analytics';
 import { releasedCharacters } from './data';
 import { load, save } from './storage';
 
@@ -22,6 +23,11 @@ export function isFound(id: string): boolean {
 export function foundCount(): number {
   const ids = foundIds();
   return releasedCharacters.filter((c) => ids.includes(c.id)).length;
+}
+
+/** 計測（zukan_open）で送る発見数の区分け */
+export function foundBucketNow(): FoundBucket {
+  return foundBucket(foundCount(), releasedCharacters.length);
 }
 
 /** 発見として記録する。初めてなら true */

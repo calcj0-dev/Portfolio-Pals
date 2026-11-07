@@ -6,7 +6,7 @@ import { inject } from '@vercel/analytics';
 import { getLocale } from './i18n';
 
 export type SelectedBucket = '1' | '2-3' | '4-6' | '7+';
-export type FoundBucket = '1' | '2-5' | '6-10' | '11-21' | '22';
+export type FoundBucket = '1' | '2-5' | '6+' | 'complete';
 
 export type AnalyticsEvent =
   | { name: 'start'; props: { from: 'title' | 'shared' | 'zukan' | 'retry' } }
@@ -75,11 +75,10 @@ export function selectedBucket(n: number): SelectedBucket {
   return '7+';
 }
 
-/** 発見数の区分け */
-export function foundBucket(n: number): FoundBucket {
+/** 発見数の区分け。全部そろったら complete（キャラの数が増えても使えるよう、数は total で受け取る。2026-11-08 の決定） */
+export function foundBucket(n: number, total: number): FoundBucket {
+  if (n >= total) return 'complete';
   if (n <= 1) return '1';
   if (n <= 5) return '2-5';
-  if (n <= 10) return '6-10';
-  if (n <= 21) return '11-21';
-  return '22';
+  return '6+';
 }

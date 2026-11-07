@@ -1,9 +1,9 @@
 // S1 タイトル（画面設計 4章）
 
-import { foundBucket, track } from '../../analytics';
+import { track } from '../../analytics';
 import { config, releasedCharacters } from '../../data';
 import { t } from '../../i18n';
-import { foundCount } from '../../zukan';
+import { foundBucketNow, foundCount } from '../../zukan';
 import type { ScreenFactory } from '../app';
 import { button, externalLink, h } from '../dom';
 import { characterArt } from '../character';
@@ -32,7 +32,7 @@ export const titleScreen: ScreenFactory = (app) => {
     button(
       t('title.zukan', { total: releasedCharacters.length, count: foundCount() }),
       () => {
-        track('zukan_open', { from: 'title', found: foundBucket(foundCount()) });
+        track('zukan_open', { from: 'title', found: foundBucketNow() });
         app.go('zukan');
       },
       'link',

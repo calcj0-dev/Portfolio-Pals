@@ -28,8 +28,10 @@ describe('T-14 送るデータ', () => {
     expect([1, 2, 3, 4, 6, 7, 12].map(selectedBucket)).toEqual(['1', '2-3', '2-3', '4-6', '4-6', '7+', '7+']);
   });
 
-  it('発見数の区分け', () => {
-    expect([0, 1, 2, 5, 6, 10].map(foundBucket)).toEqual(['1', '1', '2-5', '2-5', '6-10', '6-10']);
+  it('発見数の区分け（1／2-5／6+／complete）', () => {
+    expect([0, 1, 2, 5, 6, 9, 10].map((n) => foundBucket(n, 10))).toEqual(['1', '1', '2-5', '2-5', '6+', '6+', 'complete']);
+    // キャラが増えても、全部そろったときだけ complete
+    expect([10, 21, 22].map((n) => foundBucket(n, 22))).toEqual(['6+', '6+', 'complete']);
   });
 
   it('track() に入力の中身（割合・選んだ区分）を渡していない', () => {

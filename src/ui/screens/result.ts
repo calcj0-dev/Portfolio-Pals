@@ -1,7 +1,7 @@
 // S4 結果（画面設計 7章、診断仕様 5章）。
 // 絵がぽよんと出る → タイプ名 → 一言 の順に少しずつ出す（タップで飛ばす）。
 
-import { foundBucket, track } from '../../analytics';
+import { track } from '../../analytics';
 import { sfx } from '../../audio';
 import { toPortfolio } from '../../core/portfolio';
 import { characterById, config, inputRules, releasedCharacters } from '../../data';
@@ -9,7 +9,7 @@ import { charText, t } from '../../i18n';
 import { postText } from '../../share/postText';
 import { resultImage } from '../../share/resultImage';
 import { openXIntent, preferWebShare, shareWithImage } from '../../share/share';
-import { foundCount } from '../../zukan';
+import { foundBucketNow, foundCount } from '../../zukan';
 import type { ScreenFactory } from '../app';
 import { button, externalLink, h } from '../dom';
 import { characterArt } from '../character';
@@ -103,7 +103,7 @@ export const resultScreen: ScreenFactory = (app) => {
       button(
         t('result.zukan'),
         () => {
-          track('zukan_open', { from: 'result', found: foundBucket(foundCount()) });
+          track('zukan_open', { from: 'result', found: foundBucketNow() });
           app.go('zukan');
         },
         'link',
