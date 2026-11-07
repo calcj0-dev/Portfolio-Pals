@@ -24,7 +24,7 @@ function compatRow(app: App, mark: string, otherId: string, why: string): HTMLEl
   const found = isFound(otherId);
   const children = [
     h('span', { className: 'compat-mark', text: mark, attrs: { 'aria-hidden': 'true' } }),
-    characterArt(otherId, { silhouette: !found, className: 'compat-art' }),
+    characterArt(otherId, { silhouette: !found, className: 'compat-art', small: true }),
     h('div', { className: 'compat-text' }, [
       h('p', { className: 'compat-name', text: found ? charText(otherId).name : t('common.unknown') }),
       h('p', { className: 'compat-why', text: why }),

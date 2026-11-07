@@ -17,7 +17,7 @@ export const titleScreen: ScreenFactory = (app) => {
     h(
       'div',
       { className: 'title-art', attrs: { 'aria-hidden': 'true' } },
-      config.titleCharacters.map((id) => characterArt(id, { className: 'title-char', eager: true })),
+      config.titleCharacters.map((id) => characterArt(id, { className: 'title-char', eager: true, small: true })),
     ),
     h('h1', { className: 'title-main', text: t('title.main') }),
     h('p', { className: 'title-sub', text: t('title.sub') }),

@@ -3,6 +3,7 @@ import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { validateData, type DataSet } from '../src/core/validate';
 import { characters, config, dataSet, releasedCharacters } from '../src/data';
+import { smallImage } from '../src/ui/character';
 
 /** 正しいデータを複製して、一か所だけ壊す */
 function broken(edit: (d: DataSet) => void): string[] {
@@ -21,8 +22,9 @@ describe('今のデータ', () => {
     expect(releasedCharacters).toHaveLength(10);
   });
 
-  it.each(releasedCharacters.map((c) => [c.id, c.image] as const))('公開中の %s の絵がある', (_id, image) => {
+  it.each(releasedCharacters.map((c) => [c.id, c.image] as const))('公開中の %s の絵（大・小）がある', (_id, image) => {
     expect(existsSync(new URL(`../public/${image}`, import.meta.url))).toBe(true);
+    expect(existsSync(new URL(`../public/${smallImage(image)}`, import.meta.url))).toBe(true);
   });
 });
 

@@ -18,12 +18,12 @@ export const zukanScreen: ScreenFactory = (app) => {
   const card = (id: string): HTMLElement => {
     if (!isFound(id)) {
       return h('div', { className: 'zukan-card zukan-unknown' }, [
-        characterArt(id, { silhouette: true }),
+        characterArt(id, { silhouette: true, small: true }),
         h('p', { className: 'zukan-name', text: t('common.unknown') }),
       ]);
     }
     return h('button', { className: 'zukan-card', attrs: { type: 'button' }, on: { click: () => openDetail(app, id) } }, [
-      characterArt(id),
+      characterArt(id, { small: true }),
       h('p', { className: 'zukan-name', text: charText(id).name }),
     ]);
   };

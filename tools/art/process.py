@@ -1,4 +1,5 @@
-"""キャラの絵の仕上げ：白い背景を透明にし、余白をそろえて public/chars/<ID>.webp（画面用）と art/png/<ID>.png（OGP 画像の材料）にする。
+"""キャラの絵の仕上げ：白い背景を透明にし、余白をそろえて public/chars/<ID>.webp（画面用）・public/chars/<ID>-256.webp（小さく出すところ用）と
+art/png/<ID>.png（OGP 画像の材料）にする。
 
 使い方（プロジェクトのフォルダで）：
     python tools/art/process.py monk craftsman otter
@@ -23,6 +24,8 @@ OUT = ROOT / "public" / "chars"
 OUT_PNG = ROOT / "art" / "png"
 
 OUT_SIZE = 512
+# タイトル・図鑑・相性など、小さく出すところ用（最初に読み込む量を減らす。受け入れ基準 4章の200KB）
+SMALL_SIZE = 256
 # 画面設計 9章の「240 のうち上下左右 16」と同じ割合
 OUT_MARGIN = 16 / 240
 # これより明るいところを「背景または影」とみなす（足元の影は R215 G193 B184 くらい）
@@ -133,7 +136,9 @@ def process(type_id: str) -> None:
     OUT_PNG.mkdir(parents=True, exist_ok=True)
     out.save(OUT_PNG / f"{type_id}.png", optimize=True)
     out.save(OUT / f"{type_id}.webp", quality=88, method=6)
-    sizes = ", ".join(f"{p.suffix} {p.stat().st_size // 1024}KB" for p in (OUT_PNG / f"{type_id}.png", OUT / f"{type_id}.webp"))
+    out.resize((SMALL_SIZE, SMALL_SIZE), Image.LANCZOS).save(OUT / f"{type_id}-{SMALL_SIZE}.webp", quality=85, method=6)
+    files = (OUT_PNG / f"{type_id}.png", OUT / f"{type_id}.webp", OUT / f"{type_id}-{SMALL_SIZE}.webp")
+    sizes = ", ".join(f"{p.name} {p.stat().st_size // 1024}KB" for p in files)
     print(f"{type_id}: {src.name} -> {sizes}")
 
 
