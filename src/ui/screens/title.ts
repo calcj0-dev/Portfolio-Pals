@@ -1,8 +1,9 @@
-// S1 タイトル（画面設計 4章）。図鑑・プライバシーはあとで足す
+// S1 タイトル（画面設計 4章）。プライバシーはあとで足す
 
-import { track } from '../../analytics';
-import { config } from '../../data';
+import { foundBucket, track } from '../../analytics';
+import { config, releasedCharacters } from '../../data';
 import { t } from '../../i18n';
+import { foundCount } from '../../zukan';
 import type { ScreenFactory } from '../app';
 import { button, externalLink, h } from '../dom';
 import { characterArt } from '../character';
@@ -27,6 +28,14 @@ export const titleScreen: ScreenFactory = (app) => {
         app.go('input');
       },
       'btn btn-primary btn-big',
+    ),
+    button(
+      t('title.zukan', { total: releasedCharacters.length, count: foundCount() }),
+      () => {
+        track('zukan_open', { from: 'title', found: foundBucket(foundCount()) });
+        app.go('zukan');
+      },
+      'link',
     ),
     h('p', { className: 'small', text: t('title.safe') }),
     externalLink(t('title.credit'), config.links.follow),

@@ -12,6 +12,7 @@
     "title.start": "診断する",
     "title.safe": "入力した割合は送信されません",
     "title.credit": "つくった人：@shooojp19",
+    "title.zukan": "図鑑（{total}体中 {count}体を発見）",
     "input.help": "？入れ方",
     "input.step1": "① 持っているものを選ぶ",
     "input.presets": "よくある例",
@@ -45,6 +46,11 @@
     "result.tvaHeading": "あなたのタイプで、積立に勝てる？",
     "result.tvaButton": "積立投資を超えろ！で遊ぶ",
     "result.follow": "つくった人をXでフォロー",
+    "result.zukan": "図鑑を見る",
+    "zukan.heading": "図鑑",
+    "zukan.count": "{total}体中 {count}体を発見",
+    "zukan.complete": "{total}体 コンプリート！",
+    "detail.backToZukan": "図鑑にもどる",
     "share.post": "投資キャラ診断の結果、「{name}」でした。「{one}」 {hashtag}"
   },
   "categories": {

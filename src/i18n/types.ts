@@ -17,6 +17,7 @@ export const MESSAGE_KEYS = [
   'title.start',
   'title.safe',
   'title.credit',
+  'title.zukan',
 
   'input.help',
   'input.step1',
@@ -56,6 +57,13 @@ export const MESSAGE_KEYS = [
   'result.tvaHeading',
   'result.tvaButton',
   'result.follow',
+  'result.zukan',
+
+  'zukan.heading',
+  'zukan.count',
+  'zukan.complete',
+
+  'detail.backToZukan',
 
   'share.post',
 ] as const;

@@ -7,11 +7,13 @@ import { createApp, type ScreenName } from './ui/app';
 import { modals } from './ui/modals';
 import { disclaimer } from './ui/parts';
 import { unlockAudio } from './audio';
+import { detailScreen } from './ui/screens/detail';
 import { diagnosingScreen } from './ui/screens/diagnosing';
 import { inputScreen } from './ui/screens/input';
 import { preparingScreen } from './ui/screens/preparing';
 import { resultScreen } from './ui/screens/result';
 import { titleScreen } from './ui/screens/title';
+import { zukanScreen } from './ui/screens/zukan';
 import { session } from './ui/session';
 
 setLocale('ja');
@@ -29,8 +31,8 @@ if (root) {
       input: inputScreen,
       diagnosing: diagnosingScreen,
       result: resultScreen,
-      zukan: preparingScreen,
-      detail: preparingScreen,
+      zukan: zukanScreen,
+      detail: detailScreen,
       shared: preparingScreen,
     },
     modals,
@@ -38,12 +40,15 @@ if (root) {
   );
   app.go('title');
 
-  // 開発用：?screen=result&type=monk&preset=world100 のように画面を直接開く（公開版では無視する）
+  // 開発用：?screen=result&type=monk&preset=world100 のように画面を直接開く（公開版では無視する）。
+  // found=monk,owl で発見の記録を置き換える
   if (import.meta.env.DEV) {
     const q = new URLSearchParams(location.search);
     const preset = config.presets.find((p) => p.id === q.get('preset'));
     if (preset) session.input = fromValues(preset.values, inputRules);
-    if (q.get('type')) session.resultType = q.get('type');
+    if (q.get('type')) session.resultType = session.detailType = q.get('type');
+    const found = q.get('found');
+    if (found !== null) localStorage.setItem('baka017.found', JSON.stringify(found.split(',').filter(Boolean)));
     const screen = q.get('screen') as ScreenName | null;
     if (screen) app.go(screen);
   }

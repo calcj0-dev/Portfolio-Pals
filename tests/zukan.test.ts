@@ -1,6 +1,6 @@
 // T-10 発見の記録（シェアURLで見ただけでは保存されないことは #11 で足す）
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { foundIds, hasDiagnosed, isFound, markDiagnosed, markFound } from '../src/zukan';
+import { foundCount, foundIds, hasDiagnosed, isFound, markDiagnosed, markFound } from '../src/zukan';
 
 let store: Map<string, string>;
 
@@ -28,6 +28,11 @@ describe('T-10 発見の記録', () => {
     store.set('baka017.found', JSON.stringify(['future_char']));
     markFound('owl');
     expect(foundIds()).toEqual(['future_char', 'owl']);
+  });
+
+  it('発見数は公開中のキャラだけを数える（図鑑の「10体中 〇体」）', () => {
+    store.set('baka017.found', JSON.stringify(['monk', 'owl', 'dragon', 'future_char']));
+    expect(foundCount()).toBe(2);
   });
 
   it('壊れた記録は空として扱う', () => {

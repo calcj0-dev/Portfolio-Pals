@@ -10,4 +10,6 @@ export const session = {
   resultType: null as string | null,
   /** 直前の結果が初めて発見したキャラか */
   newFound: false,
+  /** 詳細画面（S6）で見ているタイプID */
+  detailType: null as string | null,
 };

@@ -1,39 +1,23 @@
 // S4 結果（画面設計 7章、診断仕様 5章）。
 // 絵がぽよんと出る → タイプ名 → 一言 の順に少しずつ出す（タップで飛ばす）。
-// 結果画像・図鑑・プライバシーへの導線はそれぞれの作業で足す
+// 結果画像・プライバシーへの導線はそれぞれの作業で足す
 
-import { track } from '../../analytics';
+import { foundBucket, track } from '../../analytics';
 import { sfx } from '../../audio';
 import { toPortfolio } from '../../core/portfolio';
 import { characterById, config, inputRules, releasedCharacters } from '../../data';
 import { charText, t } from '../../i18n';
 import { postText } from '../../share/postText';
 import { openXIntent } from '../../share/share';
-import { foundIds, isFound } from '../../zukan';
+import { foundCount } from '../../zukan';
 import type { ScreenFactory } from '../app';
 import { button, externalLink, h } from '../dom';
 import { characterArt } from '../character';
+import { characterSections, section } from '../characterSections';
 import { createPie } from '../pie';
 import { soundButton } from '../parts';
 import { session } from '../session';
 import { reducedMotion } from './diagnosing';
-
-const list = (items: string[]) => h('ul', { className: 'bullets' }, items.map((x) => h('li', { text: x })));
-const section = (heading: string, body: (HTMLElement | null)[]) =>
-  h('section', { className: 'result-section' }, [h('h2', { className: 'result-h', text: heading }), ...body]);
-
-/** 相性の1行。発見済みなら絵＋名前、未発見なら「？？？」＋理由（決定 #22） */
-function compatRow(mark: string, otherId: string, why: string): HTMLElement {
-  const found = isFound(otherId);
-  return h('div', { className: `compat ${found ? '' : 'compat-unknown'}`.trim() }, [
-    h('span', { className: 'compat-mark', text: mark, attrs: { 'aria-hidden': 'true' } }),
-    characterArt(otherId, { silhouette: !found, className: 'compat-art' }),
-    h('div', { className: 'compat-text' }, [
-      h('p', { className: 'compat-name', text: found ? charText(otherId).name : t('common.unknown') }),
-      h('p', { className: 'compat-why', text: why }),
-    ]),
-  ]);
-}
 
 /** 外部へのリンク（TAMERU・前作・フォロー）。押したら計測する */
 function outLink(text: string, href: string, target: 'tameru' | 'tva' | 'follow', type: string, className: string) {
@@ -75,7 +59,7 @@ export const resultScreen: ScreenFactory = (app) => {
         className: 'new-found',
         text: t('result.newFound', {
           total: releasedCharacters.length,
-          count: foundIds().filter((id) => characterById(id)?.released).length,
+          count: foundCount(),
         }),
       })
     : null;
@@ -102,12 +86,17 @@ export const resultScreen: ScreenFactory = (app) => {
         },
         'link',
       ),
+      button(
+        t('result.zukan'),
+        () => {
+          track('zukan_open', { from: 'result', found: foundBucket(foundCount()) });
+          app.go('zukan');
+        },
+        'link',
+      ),
     ]),
     h('div', { className: 'card result-body' }, [
-      section(t('result.traits'), [list(c.traits)]),
-      section(t('result.aruaru'), [list(c.aruaru)]),
-      section(t('result.compat'), [compatRow(t('result.goodMark'), def.good, c.goodWhy), compatRow(t('result.badMark'), def.bad, c.badWhy)]),
-      section(t('result.proverb'), [h('p', { className: 'proverb', text: t('common.quote', { text: c.proverb }) })]),
+      ...characterSections(app, type),
       section(t('result.pie'), [createPie(toPortfolio(session.input, inputRules), 140).el]),
       h('p', { className: 'small', text: t('common.disclaimer') }),
     ]),

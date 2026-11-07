@@ -1,6 +1,7 @@
 // 発見の記録（診断仕様 6章、技術設計 10章）。自分の入力で出たキャラだけを端末に保存する。
 // シェアURLで見たキャラは数えない。保存できない環境でも動く（T-10）
 
+import { releasedCharacters } from './data';
 import { load, save } from './storage';
 
 /** 発見したタイプID（知らないIDが入っていても捨てずに残す。キャラを増やしても過去の記録が消えないように） */
@@ -15,6 +16,12 @@ export function foundIds(): string[] {
 
 export function isFound(id: string): boolean {
   return foundIds().includes(id);
+}
+
+/** 公開中のキャラのうち、発見した数（図鑑の「〇体中 〇体」） */
+export function foundCount(): number {
+  const ids = foundIds();
+  return releasedCharacters.filter((c) => ids.includes(c.id)).length;
 }
 
 /** 発見として記録する。初めてなら true */

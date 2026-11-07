@@ -542,6 +542,69 @@ button {
   background: #2b2528;
 }
 
+/* ---- S5 図鑑・S6 詳細 ---- */
+.zukan-heading {
+  font-size: 26px;
+  text-align: center;
+}
+
+.zukan-count {
+  align-self: center;
+  color: var(--text-sub);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.zukan-complete {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #fff1c9;
+  color: var(--text);
+}
+
+.zukan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.zukan-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+  cursor: pointer;
+}
+
+.zukan-card .char-art {
+  width: 100%;
+}
+
+.zukan-unknown {
+  cursor: default;
+  background: #f4efe7;
+  box-shadow: none;
+}
+
+.zukan-name {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  /* 対応しているブラウザでは文節で折り返す（「カピ／バラ」にしない） */
+  word-break: auto-phrase;
+}
+
+.zukan-unknown .zukan-name {
+  color: var(--text-sub);
+}
+
 /* ---- S4 結果 ---- */
 .result-lead {
   font-weight: 700;
@@ -635,6 +698,19 @@ button {
   align-items: center;
   gap: 8px;
   padding: 6px 0;
+}
+
+.compat-open {
+  width: 100%;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.compat-open .compat-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .compat-mark {
