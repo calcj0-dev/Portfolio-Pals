@@ -1,4 +1,5 @@
-// データの検査（T-06・T-07。絵の有無は #9 で足す）
+// データの検査（T-06・T-07）
+import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { validateData, type DataSet } from '../src/core/validate';
 import { characters, dataSet, releasedCharacters } from '../src/data';
@@ -18,6 +19,10 @@ describe('今のデータ', () => {
   it('キャラは22種（データ）。公開中は10体', () => {
     expect(characters).toHaveLength(22);
     expect(releasedCharacters).toHaveLength(10);
+  });
+
+  it.each(releasedCharacters.map((c) => [c.id, c.image] as const))('公開中の %s の絵がある', (_id, image) => {
+    expect(existsSync(new URL(`../public/${image}`, import.meta.url))).toBe(true);
   });
 });
 
