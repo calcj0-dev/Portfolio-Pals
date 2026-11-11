@@ -9,7 +9,7 @@ import type { ScreenFactory } from '../app';
 import { button, h } from '../dom';
 import { characterArt } from '../character';
 import { openDetail } from '../characterSections';
-import { backButton } from '../parts';
+import { backButton, homeButton } from '../parts';
 
 export const zukanScreen: ScreenFactory = (app) => {
   const total = releasedCharacters.length;
@@ -34,7 +34,7 @@ export const zukanScreen: ScreenFactory = (app) => {
     .filter(([, list]) => list.length > 0);
 
   const el = h('main', { className: 'screen screen-zukan' }, [
-    h('div', { className: 'top-bar top-bar-split' }, [backButton(() => history.back())]),
+    h('div', { className: 'top-bar top-bar-split' }, [backButton(() => history.back()), homeButton(() => app.go('title'))]),
     h('h1', { className: 'zukan-heading', text: t('zukan.heading') }),
     h('p', {
       className: `zukan-count ${count === total ? 'zukan-complete' : ''}`.trim(),

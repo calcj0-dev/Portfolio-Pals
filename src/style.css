@@ -104,6 +104,18 @@ button {
   padding: 0 8px 0 0;
 }
 
+/* 上の帯の右側（ホーム・入れ方・音） */
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.home-btn {
+  gap: 4px;
+  padding: 0 8px;
+}
+
 .btn {
   min-height: 48px;
   padding: 10px 20px;
@@ -671,7 +683,6 @@ button {
 
 /* ---- S7 シェアURL ---- */
 .shared-app {
-  padding-top: 12px;
   font-size: 15px;
   font-weight: 700;
   color: var(--text-sub);

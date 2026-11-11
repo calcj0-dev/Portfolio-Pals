@@ -9,6 +9,7 @@ import type { ScreenFactory } from '../app';
 import { button, h } from '../dom';
 import { characterArt } from '../character';
 import { characterSections } from '../characterSections';
+import { homeButton } from '../parts';
 import { session } from '../session';
 
 export const sharedScreen: ScreenFactory = (app) => {
@@ -20,7 +21,7 @@ export const sharedScreen: ScreenFactory = (app) => {
   const c = charText(type);
 
   const el = h('main', { className: 'screen screen-shared' }, [
-    h('p', { className: 'shared-app', text: t('title.main') }),
+    h('div', { className: 'top-bar top-bar-split' }, [h('p', { className: 'shared-app', text: t('title.main') }), homeButton(() => app.go('title'))]),
     h('p', { className: 'result-lead shared-lead', text: t('shared.lead') }),
     h('div', { className: 'result-hero' }, [
       characterArt(type, { className: 'result-art', eager: true }),

@@ -15,7 +15,7 @@ import { button, externalLink, h } from '../dom';
 import { characterArt } from '../character';
 import { characterSections, section } from '../characterSections';
 import { createPie } from '../pie';
-import { soundButton } from '../parts';
+import { homeButton, soundButton, topActions } from '../parts';
 import { session } from '../session';
 import { reducedMotion } from './diagnosing';
 
@@ -85,7 +85,10 @@ export const resultScreen: ScreenFactory = (app) => {
   };
 
   const el = h('main', { className: 'screen screen-result' }, [
-    h('div', { className: 'top-bar top-bar-split' }, [h('p', { className: 'result-lead', text: t('result.heading') }), sound.el]),
+    h('div', { className: 'top-bar top-bar-split' }, [
+      h('p', { className: 'result-lead', text: t('result.heading') }),
+      topActions([homeButton(() => app.go('title')), sound.el]),
+    ]),
     hero,
     newFound,
     button(t('result.share'), share, 'btn btn-primary btn-big'),

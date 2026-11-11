@@ -6,6 +6,7 @@ import type { LocaleCheck } from '../core/validate';
 export const MESSAGE_KEYS = [
   'common.disclaimer',
   'common.back',
+  'common.home',
   'common.close',
   'common.soundOn',
   'common.soundOff',

@@ -7,7 +7,7 @@ import { categoryName, localeData, t } from '../../i18n';
 import type { ScreenFactory } from '../app';
 import { button, h, linkButton } from '../dom';
 import { createPie } from '../pie';
-import { backButton, percent } from '../parts';
+import { backButton, homeButton, percent, topActions } from '../parts';
 import { session } from '../session';
 import { createSlider } from '../slider';
 
@@ -121,7 +121,7 @@ export const inputScreen: ScreenFactory = (app) => {
   const el = h('main', { className: 'screen screen-input' }, [
     h('div', { className: 'top-bar top-bar-split' }, [
       backButton(() => history.back()),
-      linkButton(t('input.help'), () => app.openModal('help')),
+      topActions([homeButton(() => app.go('title')), linkButton(t('input.help'), () => app.openModal('help'))]),
     ]),
     h('section', { className: 'card' }, [h('h2', { className: 'step', text: t('input.step1') }), ...groups, presets]),
     h('section', { className: 'card' }, [
