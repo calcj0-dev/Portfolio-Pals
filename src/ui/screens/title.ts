@@ -11,6 +11,10 @@ import { soundButton, versionLabel } from '../parts';
 
 export const titleScreen: ScreenFactory = (app) => {
   const sound = soundButton();
+  // 作品のまとめページ Ted App Lab（結果画面の枠と同じリンク先。2026-11-14 の決定）
+  const labLink = externalLink(t('title.lab'), config.links.tva);
+  labLink.addEventListener('click', () => track('main_app_click', { target: 'tva' }));
+
   const el = h('main', { className: 'screen screen-title' }, [
     h('div', { className: 'top-bar' }, [versionLabel(), sound.el]),
     // キャラの名前は出さない（案A）。絵は飾りなので読み上げない
@@ -39,6 +43,7 @@ export const titleScreen: ScreenFactory = (app) => {
     ),
     h('p', { className: 'small', text: t('title.safe') }),
     externalLink(t('title.credit'), config.links.follow),
+    labLink,
     button(t('title.privacy'), () => app.openModal('privacy'), 'link'),
   ]);
   return { el, unmount: sound.dispose };

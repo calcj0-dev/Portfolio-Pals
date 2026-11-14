@@ -15,7 +15,7 @@ export type AnalyticsEvent =
       props: { type: string; first: boolean; new_found: boolean; selected: SelectedBucket; preset: boolean };
     }
   | { name: 'share_click'; props: { method: 'x_intent' | 'web_share' | 'save_image'; pie: 'on' | 'off'; type: string } }
-  | { name: 'main_app_click'; props: { target: 'tameru' | 'tva' | 'follow'; type: string } }
+  | { name: 'main_app_click'; props: { target: 'tameru' | 'tva' | 'follow'; type?: string } }
   | { name: 'zukan_open'; props: { from: 'title' | 'result' | 'shared'; found: FoundBucket } }
   | { name: 'retry'; props: Record<string, never> }
   | { name: 'shared_view'; props: { type: string } };

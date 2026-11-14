@@ -19,6 +19,7 @@ export const MESSAGE_KEYS = [
   'title.credit',
   'title.zukan',
   'title.privacy',
+  'title.lab',
 
   'input.help',
   'input.step1',
