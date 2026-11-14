@@ -50,11 +50,19 @@ if (root) {
   }
 
   // 開発用：?screen=result&type=monk&preset=world100 のように画面を直接開く（公開版では無視する）。
-  // found=monk,owl で発見の記録を置き換える。modal=image で重ね表示を開く
+  // found=monk,owl で発見の記録を置き換える。modal=image で重ね表示を開く。
+  // values=us:60,gold:10 で割合を入れる（残りは現金・預金）。pie=1 で結果画像の円グラフをオンにして開く
   if (import.meta.env.DEV) {
     const q = new URLSearchParams(location.search);
     const preset = config.presets.find((p) => p.id === q.get('preset'));
     if (preset) session.input = fromValues(preset.values, inputRules);
+    const values = q.get('values');
+    if (values) {
+      session.input = fromValues(
+        Object.fromEntries(values.split(',').map((kv) => [kv.split(':')[0]!, Number(kv.split(':')[1])])),
+        inputRules,
+      );
+    }
     if (q.get('type')) session.resultType = session.detailType = session.sharedType = q.get('type');
     const found = q.get('found');
     if (found !== null) localStorage.setItem('baka017.found', JSON.stringify(found.split(',').filter(Boolean)));

@@ -74,10 +74,10 @@ async function renderResultImage(type: string, portfolio: Portfolio, withPie: bo
   const art = await loadImage(def.image);
   if (art) ctx.drawImage(art, 90, 60, 460, 460);
 
-  // 右：見出し → タイプ名 → 一言 →（オンなら）円グラフと上位3区分。縦の真ん中にそろえる
+  // 右：見出し → タイプ名 → 一言 →（オンなら）円グラフと全区分の名前・%（多い順）。縦の真ん中にそろえる
   const name = fitLines(ctx, c.name, 60, 700, 36);
   const one = fitLines(ctx, t('common.quote', { text: c.one }), 32, 500, 22);
-  const top3 = withPie ? [...slices(portfolio)].sort((a, b) => b.value - a.value).slice(0, 3) : [];
+  const legend = withPie ? [...slices(portfolio)].sort((a, b) => b.value - a.value) : [];
   const PIE = 150;
   const blocks = [36, name.lines.length * name.size * 1.25, 16, one.lines.length * one.size * 1.4, withPie ? 28 + PIE : 0];
   let y = Math.round(40 + (500 - blocks.reduce((a, b) => a + b, 0)) / 2);
@@ -107,24 +107,34 @@ async function renderResultImage(type: string, portfolio: Portfolio, withPie: bo
   if (withPie) {
     y += 28;
     drawPie(ctx, portfolio, X + PIE / 2, y + PIE / 2, PIE / 2 - 18, 34);
-    const lx = X + PIE + 32;
-    const rowH = 40;
-    let ly = y + PIE / 2 - (top3.length * rowH) / 2;
+    // 区分の数で並べ方を変え、円グラフの高さに全部収める（3つまで：大きく1列／6つまで：1列／7つ以上：2列）
+    const n = legend.length;
+    const cols = n > 6 ? 2 : 1;
+    const rows = Math.ceil(n / cols);
+    const rowH = n <= 3 ? 40 : 25;
+    const size = n <= 3 ? 26 : n <= 6 ? 22 : 18;
+    const dot = n <= 3 ? 10 : 7;
+    const lx = X + PIE + 28;
+    const colW = (RIGHT - lx) / cols;
+    const top = y + PIE / 2 - (rows * rowH) / 2;
     ctx.textBaseline = 'middle';
-    for (const s of top3) {
+    legend.forEach((s, i) => {
+      const cx = lx + Math.floor(i / rows) * colW;
+      const cy = top + (i % rows) * rowH + rowH / 2;
       ctx.fillStyle = s.color;
       ctx.beginPath();
-      ctx.arc(lx + 10, ly + rowH / 2, 10, 0, Math.PI * 2);
+      ctx.arc(cx + dot, cy, dot, 0, Math.PI * 2);
       ctx.fill();
       ctx.fillStyle = COLOR.text;
-      ctx.font = `500 26px ${FONT}`;
-      ctx.fillText(categoryName(s.id), lx + 32, ly + rowH / 2);
-      ctx.textAlign = 'right';
-      ctx.font = `700 26px ${FONT}`;
-      ctx.fillText(t('common.percent', { value: s.value }), RIGHT, ly + rowH / 2);
       ctx.textAlign = 'left';
-      ly += rowH;
-    }
+      ctx.font = `500 ${size}px ${FONT}`;
+      ctx.fillText(categoryName(s.id), cx + dot * 2 + 8, cy);
+      ctx.textAlign = 'right';
+      ctx.font = `700 ${size}px ${FONT}`;
+      // 2列のときは、左の列の%を右の列と離す
+      ctx.fillText(t('common.percent', { value: s.value }), cx + colW - (cols > 1 && i < rows ? 14 : 0), cy);
+    });
+    ctx.textAlign = 'left';
   }
 
   // 下：作品名・URL・免責

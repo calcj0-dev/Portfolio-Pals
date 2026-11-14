@@ -84,6 +84,8 @@ const image: ModalFactory = (app) => {
       img.src = await toDataUrl(b);
     });
   };
+  // 開発用：?pie=1 で円グラフをオンにして開く（公開版では無視する）
+  if (import.meta.env.DEV && new URLSearchParams(location.search).get('pie') === '1') pieSwitch.checked = true;
   pieSwitch.addEventListener('change', draw);
   draw();
 
