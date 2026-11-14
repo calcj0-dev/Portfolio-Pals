@@ -29,7 +29,7 @@ describe('今のデータ', () => {
 });
 
 describe('導線のリンク（06章 2.4）', () => {
-  it.each(['tameru', 'tva'] as const)('%s に UTM が付いている', (k) => {
+  it.each(['tameru'] as const)('%s に UTM が付いている', (k) => {
     const u = new URL(config.links[k]);
     expect(u.protocol).toBe('https:');
     expect(u.searchParams.get('utm_source')).toBe('bakage');
@@ -37,7 +37,8 @@ describe('導線のリンク（06章 2.4）', () => {
     expect(u.searchParams.get('utm_campaign')).toBe('baka017');
   });
 
-  it('フォローと X の投稿画面は https', () => {
+  it('前作の枠・フォロー・X の投稿画面は https', () => {
+    expect(new URL(config.links.tva).protocol).toBe('https:');
     expect(new URL(config.links.follow).protocol).toBe('https:');
     expect(new URL(config.links.xIntent).protocol).toBe('https:');
   });
